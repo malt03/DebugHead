@@ -19,5 +19,5 @@ public protocol DebugMenu {
   static var debugMenuTitle: String { get }
   static var debugMenuAccessoryType: UITableViewCellAccessoryType { get }
   static var debugMenuDangerLevel: DebugMenuDangerLevel { get }
-  static func debugMenuSelected() -> UIViewController?
+  static func debugMenuSelected(debugMenuTableViewController: UITableViewController) -> UIViewController?
 }

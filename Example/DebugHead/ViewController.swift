@@ -10,7 +10,7 @@ import UIKit
 import DebugHead
 
 class ViewController: UIViewController, DebugMenu {
-  static func debugMenuSelected() -> UIViewController? {
+  static func debugMenuSelected(debugMenuTableViewController: UITableViewController) -> UIViewController? {
     return UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
   }
   

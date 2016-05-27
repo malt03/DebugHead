@@ -13,7 +13,7 @@ class LowViewController: UIViewController, DebugMenu {
   static let debugMenuDangerLevel = DebugMenuDangerLevel.Low
   static let debugMenuTitle = "piyo"
   static let debugMenuAccessoryType = UITableViewCellAccessoryType.DetailButton
-  static func debugMenuSelected() -> UIViewController? {
+  static func debugMenuSelected(debugMenuTableViewController: UITableViewController) -> UIViewController? {
     return UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Low")
   }
 }
