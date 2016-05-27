@@ -12,7 +12,7 @@ public class DebugHead: UIView {
   public static let sharedInstance = DebugHead.instance()
 
   public func prepare(
-    menuClasses m: DebugMenu.Type...,
+    menuClasses m: [DebugMenu.Type],
     center c: CGPoint = CGPoint(x: UIScreen.mainScreen().bounds.size.width - 50, y: UIScreen.mainScreen().bounds.size.height - 50),
     sorting: Bool = true,
     footerView fv: UIView? = nil

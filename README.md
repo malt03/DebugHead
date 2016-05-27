@@ -9,7 +9,28 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
+## Usage
+
+### Initialize
+```swift
+func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+  DebugHead.sharedInstance.prepare(menuClasses: DebugMenuExit.self, DebugMenuHideDebugHead.self, ...)
+}
+```
+
+### Creating Plugins
+```swift
+public class DebugMenuExit: DebugMenu {
+  public static let debugMenuTitle = "Title"
+  public static let debugMenuDangerLevel = DebugMenuDangerLevel.[None or Low or High or Extreme]
+  public static let debugMenuAccessoryType = UITableViewCellAccessoryType.None
+  public static func debugMenuSelected(debugHead: UIView, debugMenuTableViewController: UITableViewController) -> UIViewController? {
+    // Do something
+    return nil // If return a UIViewController instance, it will push. 
+  }
+}
+
+```
 
 ## Installation
 

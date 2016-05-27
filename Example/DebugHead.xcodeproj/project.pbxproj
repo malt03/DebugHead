@@ -14,6 +14,7 @@
 		E9ECEE8A24B2489EC2A18C1E /* Pods_DebugHead_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D568A9330529D0C849E615C /* Pods_DebugHead_Example.framework */; };
 		ED333A9C1CF8A4AA003ACC26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED333A9B1CF8A4AA003ACC26 /* AppDelegate.swift */; };
 		ED333A9E1CF8A4B2003ACC26 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED333A9D1CF8A4B2003ACC26 /* ViewController.swift */; };
+		EDB7608A1CF8D736000BC863 /* DebugMenuFooViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB760891CF8D736000BC863 /* DebugMenuFooViewController.swift */; };
 		F3CDB6F0E890B1148D9C34A2 /* Pods_DebugHead_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359354EDD27F5C353E2E172E /* Pods_DebugHead_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		E0C0E01005A356A2C5ECCA4C /* Pods-DebugHead_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DebugHead_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DebugHead_Tests/Pods-DebugHead_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		ED333A9B1CF8A4AA003ACC26 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED333A9D1CF8A4B2003ACC26 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EDB760891CF8D736000BC863 /* DebugMenuFooViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugMenuFooViewController.swift; sourceTree = "<group>"; };
 		EFAC9E95696371EB548B50CE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		FB3BC13402CE30780983342F /* Pods-DebugHead_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DebugHead_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-DebugHead_Example/Pods-DebugHead_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +97,7 @@
 			children = (
 				ED333A9B1CF8A4AA003ACC26 /* AppDelegate.swift */,
 				ED333A9D1CF8A4B2003ACC26 /* ViewController.swift */,
+				EDB760891CF8D736000BC863 /* DebugMenuFooViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -361,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED333A9E1CF8A4B2003ACC26 /* ViewController.swift in Sources */,
+				EDB7608A1CF8D736000BC863 /* DebugMenuFooViewController.swift in Sources */,
 				ED333A9C1CF8A4AA003ACC26 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
