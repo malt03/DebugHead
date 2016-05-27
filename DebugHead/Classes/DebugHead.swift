@@ -36,6 +36,14 @@ public class DebugHead: UIView {
     }
   }
   
+  private override init(frame: CGRect) {
+    super.init(frame: frame)
+  }
+  
+  required public init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+  }
+  
   private static func instance() -> DebugHead {
     return UINib(nibName: "DebugHead", bundle: bundle).instantiateWithOwner(self, options: nil).first as! DebugHead
   }
