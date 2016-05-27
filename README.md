@@ -32,6 +32,14 @@ public class DebugMenuExit: DebugMenu {
 
 ```
 
+## Built-in Plugins
+DebugMenuHideDebugHead
+DebugMenuExit
+
+## Recommending Plugins
+[DebugMenuUserDefaultsBrowser](https://cocoapods.org/pods/DebugMenuUserDefaultsBrowser)
+[DebugMenuGPUImageDumper](https://cocoapods.org/pods/DebugMenuGPUImageDumper)
+
 ## Installation
 
 DebugHead is available through [CocoaPods](http://cocoapods.org). To install
