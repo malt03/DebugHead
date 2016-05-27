@@ -14,7 +14,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ### Initialize
 ```swift
 func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-  DebugHead.sharedInstance.prepare(menuClasses: DebugMenuExit.self, DebugMenuHideDebugHead.self, ...)
+  DebugHead.sharedInstance.prepare(menuClasses: [DebugMenuExit.self, DebugMenuHideDebugHead.self])
 }
 ```
 
