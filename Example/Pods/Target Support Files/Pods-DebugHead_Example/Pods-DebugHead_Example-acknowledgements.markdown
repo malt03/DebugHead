@@ -3,7 +3,7 @@ This application makes use of the following third party libraries:
 
 ## DebugHead
 
-Copyright (c) 2016 Koji Murata <koji.murata@dena.com>
+Copyright (c) 2016 Koji Murata <malt.koji@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
