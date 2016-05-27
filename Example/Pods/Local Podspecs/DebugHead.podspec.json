@@ -1,0 +1,27 @@
+{
+  "name": "DebugHead",
+  "version": "0.1.0",
+  "summary": "A short description of DebugHead.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/DebugHead",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Koji Murata": "koji.murata@dena.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/DebugHead.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "DebugHead/Classes/**/*",
+  "resource_bundles": {
+    "DebugHead": [
+      "DebugHead/Assets/*"
+    ]
+  }
+}
