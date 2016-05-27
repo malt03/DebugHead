@@ -27,7 +27,10 @@ And, you can make plugin easy.
   s.homepage         = 'https://github.com/malt03/DebugHead'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Koji Murata' => 'malt.koji@gmail.com' }
+  s.authors          = {
+    'Tomoya Hirano' => 'cromteria@gmail.com',
+    'Koji Murata' => 'malt.koji@gmail.com',
+  }
   s.source           = { :git => 'https://github.com/malt03/DebugHead.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
