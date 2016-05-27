@@ -25,7 +25,7 @@
         <!--Foo-->
         <scene sceneID="moh-r4-gc6">
             <objects>
-                <viewController storyboardIdentifier="Foo" id="1Cs-wy-vVX" customClass="DebugMenuFooViewController" customModule="DebugHead_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Foo" title="Foo" id="1Cs-wy-vVX" customClass="DebugMenuFooViewController" customModule="DebugHead_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7uo-nK-Gcb"/>
                         <viewControllerLayoutGuide type="bottom" id="RNx-Pw-MX8"/>
@@ -33,9 +33,20 @@
                     <view key="view" contentMode="scaleToFill" id="Y7v-H5-eic">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Foooooooooooo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1v9-nD-tgU">
+                                <rect key="frame" x="237" y="289" width="126" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1v9-nD-tgU" firstAttribute="centerY" secondItem="Y7v-H5-eic" secondAttribute="centerY" id="NOw-yU-2hu"/>
+                            <constraint firstItem="1v9-nD-tgU" firstAttribute="centerX" secondItem="Y7v-H5-eic" secondAttribute="centerX" id="x6R-tT-jaj"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Foo" id="P7Q-OL-aQf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ooq-zo-TrO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
