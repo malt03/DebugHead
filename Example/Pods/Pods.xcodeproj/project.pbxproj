@@ -22,6 +22,7 @@
 		E3C77343ADFE4EFA5714FE16A1CCA0A5 /* DebugMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681B400ED03282FD750752631AEECD9D /* DebugMenuTableViewController.swift */; };
 		E59F00D5AB48DED75A461AE6523C7C3D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		EDB7607A1CF8CEB0000BC863 /* DebugMenuExit.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB760791CF8CEB0000BC863 /* DebugMenuExit.swift */; };
+		EDB7607C1CF8D007000BC863 /* DebugMenuHideDebugHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7607B1CF8D007000BC863 /* DebugMenuHideDebugHead.swift */; };
 		EEB98780DE6EFD86E267114AA8427C02 /* Pods-DebugHead_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3AE811D26C6B106AC05C718470E8E0 /* Pods-DebugHead_Tests-dummy.m */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		E76A6772AEFE826DA9F345DE2CA07081 /* DebugHead.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DebugHead.swift; sourceTree = "<group>"; };
 		E87AC0CA494228EA09CAB1902CAA9224 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDB760791CF8CEB0000BC863 /* DebugMenuExit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugMenuExit.swift; sourceTree = "<group>"; };
+		EDB7607B1CF8D007000BC863 /* DebugMenuHideDebugHead.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugMenuHideDebugHead.swift; sourceTree = "<group>"; };
 		F7EB34E6D8EBD3CA0D71D8C20AD7CC08 /* DebugHead.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DebugHead.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -126,6 +128,7 @@
 				2AD79AC3AC2BC866CB8B3EB8CFF8D9A2 /* DebugMenu.swift */,
 				681B400ED03282FD750752631AEECD9D /* DebugMenuTableViewController.swift */,
 				EDB760791CF8CEB0000BC863 /* DebugMenuExit.swift */,
+				EDB7607B1CF8D007000BC863 /* DebugMenuHideDebugHead.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDB7607C1CF8D007000BC863 /* DebugMenuHideDebugHead.swift in Sources */,
 				EDB7607A1CF8CEB0000BC863 /* DebugMenuExit.swift in Sources */,
 				4E47101FE17442A5D7E35A95CB9F62E0 /* DebugHead-dummy.m in Sources */,
 				D1D4A335605ADDC9D01D41BC8986CE1E /* DebugHead.swift in Sources */,

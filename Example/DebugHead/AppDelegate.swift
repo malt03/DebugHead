@@ -16,10 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    let label = UILabel()
-    label.text = "piyopiyo"
-    label.sizeToFit()
-    DebugHead.sharedInstance.prepare(menuClasses: ViewController.self, LowViewController.self, footerView: label)
+    DebugHead.sharedInstance.prepare(menuClasses: DebugMenuExit.self, DebugMenuHideDebugHead.self)
     return true
   }
   

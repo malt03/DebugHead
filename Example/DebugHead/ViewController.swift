@@ -9,17 +9,7 @@
 import UIKit
 import DebugHead
 
-class ViewController: UIViewController, DebugMenu {
-  static func debugMenuSelected(debugMenuTableViewController: UITableViewController) -> UIViewController? {
-    return UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
-  }
-  
-  static let debugMenuAccessoryType = UITableViewCellAccessoryType.Checkmark
-  
-  static let debugMenuDangerLevel = DebugMenuDangerLevel.Low
-  
-  static let debugMenuTitle = "Test"
-  
+class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
@@ -29,6 +19,4 @@ class ViewController: UIViewController, DebugMenu {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
-  
 }
-
