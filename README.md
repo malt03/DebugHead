@@ -26,7 +26,7 @@ public class DebugMenuExit: DebugMenu {
   public static let debugMenuAccessoryType = UITableViewCellAccessoryType.None
   public static func debugMenuSelected(debugHead: UIView, debugMenuTableViewController: UITableViewController) -> UIViewController? {
     // Do something
-    return nil // If return a UIViewController instance, it will push. 
+    return nil // If return a UIViewController instance, it will show.
   }
 }
 
