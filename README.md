@@ -1,9 +1,9 @@
 # DebugHead
 
-[![CI Status](http://img.shields.io/travis/Koji Murata/DebugHead.svg?style=flat)](https://travis-ci.org/Koji Murata/DebugHead)
-[![Version](https://img.shields.io/cocoapods/v/DebugHead.svg?style=flat)](http://cocoapods.org/pods/DebugHead)
-[![License](https://img.shields.io/cocoapods/l/DebugHead.svg?style=flat)](http://cocoapods.org/pods/DebugHead)
-[![Platform](https://img.shields.io/cocoapods/p/DebugHead.svg?style=flat)](http://cocoapods.org/pods/DebugHead)
+[![Platform](https://img.shields.io/cocoapods/p/ColorPickerView.svg?style=flat)](http://cocoapods.org/pods/ColorPickerView)
+![Language](https://img.shields.io/badge/language-Swift%202.2-orange.svg)
+[![CocoaPods](https://img.shields.io/cocoapods/v/ColorPickerView.svg?style=flat)](http://cocoapods.org/pods/ColorPickerView)
+![License](https://img.shields.io/github/license/malt03/ColorPickerView.svg?style=flat)
 
 ## Example
 
