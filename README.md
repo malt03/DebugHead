@@ -51,8 +51,8 @@ pod "DebugHead"
 
 ## Author
 
-Tomoya Hirano, cromteria@gmail.com
-Koji Murata, malt.koji@gmail.com
+- Tomoya Hirano, cromteria@gmail.com
+- Koji Murata, malt.koji@gmail.com
 
 ## License
 
