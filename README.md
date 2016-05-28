@@ -18,7 +18,7 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
 }
 ```
 
-### Creating Plugins
+### To Create Plugins
 ```swift
 public class DebugMenuFoo: DebugMenu {
   public static let debugMenuTitle = "Title"
