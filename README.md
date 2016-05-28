@@ -5,6 +5,8 @@
 [![CocoaPods](https://img.shields.io/cocoapods/v/DebugHead.svg?style=flat)](http://cocoapods.org/pods/DebugHead)
 ![License](https://img.shields.io/github/license/malt03/DebugHead.svg?style=flat)
 
+![Screenshot](https://raw.githubusercontent.com/malt03/DebugHead/master/Screenshot.gif)
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
