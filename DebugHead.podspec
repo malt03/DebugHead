@@ -25,7 +25,7 @@ And, you can make plugin easy.
                        DESC
 
   s.homepage         = 'https://github.com/malt03/DebugHead'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.screenshots      = 'https://raw.githubusercontent.com/malt03/DebugHead/master/Screenshot.gif'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.authors          = {
     'Tomoya Hirano' => 'cromteria@gmail.com',
