@@ -14,13 +14,13 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ### Initialize
 ```swift
 func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-  DebugHead.sharedInstance.prepare(menuClasses: [DebugMenuExit.self, DebugMenuHideDebugHead.self])
+  DebugHead.sharedInstance.prepare(menuClasses: [DebugMenuExit.self, DebugMenuHideDebugHead.self/*, and your plugins */])
 }
 ```
 
 ### Creating Plugins
 ```swift
-public class DebugMenuExit: DebugMenu {
+public class DebugMenuFoo: DebugMenu {
   public static let debugMenuTitle = "Title"
   public static let debugMenuDangerLevel = DebugMenuDangerLevel.[None or Low or High or Extreme]
   public static let debugMenuAccessoryType = UITableViewCellAccessoryType.None
@@ -33,12 +33,12 @@ public class DebugMenuExit: DebugMenu {
 ```
 
 ## Built-in Plugins
-DebugMenuHideDebugHead
-DebugMenuExit
+- DebugMenuHideDebugHead
+- DebugMenuExit
 
-## Recommending Plugins
-[DebugMenuUserDefaultsBrowser](https://cocoapods.org/pods/DebugMenuUserDefaultsBrowser)
-[DebugMenuGPUImageDumper](https://cocoapods.org/pods/DebugMenuGPUImageDumper)
+## Recommended Plugins
+- [DebugMenuUserDefaultsBrowser](https://cocoapods.org/pods/DebugMenuUserDefaultsBrowser)
+- [DebugMenuGPUImageDumper](https://cocoapods.org/pods/DebugMenuGPUImageDumper)
 
 ## Installation
 
