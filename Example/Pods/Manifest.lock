@@ -1,5 +1,7 @@
 PODS:
-  - DebugHead (0.1.0)
+  - BugImageCreator (0.2.0)
+  - DebugHead (0.1.1):
+    - BugImageCreator (~> 0.2.0)
 
 DEPENDENCIES:
   - DebugHead (from `../`)
@@ -9,7 +11,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  DebugHead: 9532b288cb499bbb7bb3d73f2af20135edcc49c2
+  BugImageCreator: 5e7e47da17691c0ba723b406cf8b558d4ba03599
+  DebugHead: 860856f6db0cb0f5d7138e27662a7932fb14fc77
 
 PODFILE CHECKSUM: a16a0a825ea1dee16416384c48f0ce94b8c73e22
 

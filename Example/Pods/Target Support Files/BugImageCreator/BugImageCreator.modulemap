@@ -1,0 +1,6 @@
+framework module BugImageCreator {
+  umbrella header "BugImageCreator-umbrella.h"
+
+  export *
+  module * { export * }
+}

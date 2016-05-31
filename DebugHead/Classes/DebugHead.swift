@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import BugImageCreator
 
-public class DebugHead: UIView {
+public class DebugHead: BugImageView {
   public static let sharedInstance = DebugHead.instance()
 
   public func prepare(
@@ -36,12 +37,12 @@ public class DebugHead: UIView {
     }
   }
   
-  private override init(frame: CGRect) {
-    super.init(frame: frame)
-  }
-  
   required public init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
+    
+    size = 20
+    color = .whiteColor()
+    lineWidth = 1
   }
   
   private static func instance() -> DebugHead {
