@@ -44,5 +44,5 @@ And, you can make plugin easy.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  s.dependency 'BugImageCreator', '~> 0.2.0'
+  s.dependency 'BugImageCreator', '~> 0.3.0'
 end

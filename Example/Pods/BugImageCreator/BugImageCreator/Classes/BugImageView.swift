@@ -9,24 +9,12 @@
 import UIKit
 
 public class BugImageView: UIView {
-  @IBInspectable public var size: CGFloat = 50
-  @IBInspectable public var lineWidth: CGFloat = 1
-  @IBInspectable public var color: UIColor = .blackColor()
-  
-  private let bugLayer = CALayer()
-  
-  public required init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
-    prepare()
-  }
-  
-  private func prepare() {
-    layer.addSublayer(bugLayer)
-  }
+  @IBInspectable public var bugSize: CGFloat = 50
+  @IBInspectable public var bugLineWidth: CGFloat = 1
+  @IBInspectable public var bugColor: UIColor = .blackColor()
   
   public override func drawRect(rect: CGRect) {
     super.drawRect(rect)
-    bugLayer.contents = BugImageCreator.getCacheOrCreate(size: size, lineWidth: lineWidth, color: color).CGImage
-    bugLayer.frame = CGRect(x: (rect.width - size) / 2, y: (rect.height - size) / 2, width: size, height: size)
+    BugImageCreator.drawToCurrentContext(size: bugSize, center: CGPoint(x: rect.width / 2, y: rect.height / 2), lineWidth: bugLineWidth, color: bugColor)
   }
 }

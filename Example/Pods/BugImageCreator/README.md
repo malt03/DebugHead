@@ -13,9 +13,23 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Usage
 
+### via code
+
 ```swift
-BugImageCreator.getChacheOrCreate(size: 50, lineWidth: 1, color: .blackColor()) // return UIImage
+let image = BugImageCreator.getCacheOrCreate(size: 50, lineWidth: 1, color: .blackColor())
 ```
+
+or
+
+```swift
+public override func drawRect(rect: CGRect) {
+  super.drawRect(rect)
+  BugImageCreator.drawToCurrentContext(size: rect.size, center: CGPoint(x: rect.width / 2, y: rect.height / 2), lineWidth: 1, color: .blackColor())
+}
+```
+
+### via Interface Builder
+![ib](https://github.com/malt03/BugImageCreator/blob/master/README/InterfaceBuilder.png?raw=true)
 
 ## Installation
 

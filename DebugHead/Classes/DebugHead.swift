@@ -40,9 +40,9 @@ public class DebugHead: BugImageView {
   required public init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     
-    size = 20
-    color = .whiteColor()
-    lineWidth = 1
+    bugSize = 20
+    bugColor = .whiteColor()
+    bugLineWidth = 1
   }
   
   private static func instance() -> DebugHead {

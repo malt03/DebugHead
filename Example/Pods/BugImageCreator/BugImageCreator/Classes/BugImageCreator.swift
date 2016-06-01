@@ -8,30 +8,14 @@
 import UIKit
 
 public class BugImageCreator {
-  public class func getCacheOrCreate(size size: CGFloat, lineWidth: CGFloat, color: UIColor) -> UIImage {
-    guard let url = cacheURL(size, lineWidth, color) else { return create(size: size, lineWidth: lineWidth, color: color) }
-
-    guard let data = NSData(contentsOfURL: url),
-      unscale = UIImage(data: data),
-      cgImage = unscale.CGImage else {
-      let i = create(size: size, lineWidth: lineWidth, color: color)
-      save(i, url: url)
-      return i
-    }
-    
-    return UIImage(CGImage: cgImage, scale: UIScreen.mainScreen().scale, orientation: .Up)
-  }
-  
-  public class func create(size size: CGFloat, lineWidth: CGFloat, color: UIColor) -> UIImage {
-    let s = size
-    let cx = s / 2
-    let cy = cx + s / 10
+  public class func drawToCurrentContext(size s: CGFloat, center: CGPoint, lineWidth: CGFloat, color: UIColor) {
+    let cx = center.x
+    let cy = center.y + s / 10
     let r = s * 3 / 8 - lineWidth / 2
     let hr = r / 2
     let a = r / 5
     let f = r / 3
     
-    UIGraphicsBeginImageContextWithOptions(CGSize(width: s, height: s), false, 0)
     let context = UIGraphicsGetCurrentContext()
     color.setStroke()
     CGContextSetLineWidth(context, lineWidth)
@@ -86,6 +70,26 @@ public class BugImageCreator {
       ], 2)
     
     CGContextStrokePath(context)
+  }
+  
+  public class func getCacheOrCreate(size size: CGFloat, lineWidth: CGFloat, color: UIColor) -> UIImage {
+    guard let url = cacheURL(size, lineWidth, color) else { return create(size: size, lineWidth: lineWidth, color: color) }
+
+    guard let data = NSData(contentsOfURL: url),
+      unscale = UIImage(data: data),
+      cgImage = unscale.CGImage else {
+      let i = create(size: size, lineWidth: lineWidth, color: color)
+      save(i, url: url)
+      return i
+    }
+    
+    return UIImage(CGImage: cgImage, scale: UIScreen.mainScreen().scale, orientation: .Up)
+  }
+  
+  public class func create(size s: CGFloat, lineWidth: CGFloat, color: UIColor) -> UIImage {
+    UIGraphicsBeginImageContextWithOptions(CGSize(width: s, height: s), false, 0)
+    
+    drawToCurrentContext(size: s, center: CGPoint(x: s / 2, y: s / 2), lineWidth: lineWidth, color: color)
     
     return UIGraphicsGetImageFromCurrentImageContext()!
   }
