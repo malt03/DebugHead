@@ -21,6 +21,16 @@ class DebugMenuTableViewController: UITableViewController {
   private var menuClasses = [DebugMenu.Type]()
   private var footerView: UIView?
   
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    navigationController?.navigationBar.barTintColor = .darkGrayColor()
+    navigationController?.navigationBar.tintColor = .whiteColor()
+    navigationController?.navigationBar.titleTextAttributes = [
+      NSForegroundColorAttributeName: UIColor.whiteColor()
+    ]
+  }
+  
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return menuClasses.count
   }
