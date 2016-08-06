@@ -18,11 +18,9 @@ public class DebugHead: BugImageView {
     sorting: Bool = true,
     footerView fv: UIView? = nil
   ) {
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(addSubviewOnKeyWindow), name: UIWindowDidBecomeKeyNotification, object: nil)
-    
     center = c
-    layer.borderColor = UIColor.whiteColor().CGColor
-    layer.borderWidth = 1
+    let screenSize = UIScreen.mainScreen().bounds.size
+    ratioCenter = CGPoint(x: center.x / screenSize.width, y: center.y / screenSize.height)
     
     let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(panned(_:)))
     let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapped(_:)))
@@ -37,16 +35,30 @@ public class DebugHead: BugImageView {
     }
   }
   
-  required public init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
-    
+  init() {
+    super.init(frame: CGRect(origin: .zero, size: CGSize(width: 30, height: 30)))
     bugSize = 20
     bugColor = .whiteColor()
     bugLineWidth = 1
+    backgroundColor = .darkGrayColor()
+    layer.cornerRadius = 4
+    layer.masksToBounds = true
+    layer.borderColor = UIColor.whiteColor().CGColor
+    layer.borderWidth = 1
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(addSubviewOnKeyWindow), name: UIWindowDidBecomeKeyNotification, object: nil)
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(orientationDidChange), name: UIDeviceOrientationDidChangeNotification, object: nil)
+  }
+  
+  deinit {
+    NSNotificationCenter.defaultCenter().removeObserver(self)
+  }
+  
+  required public init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
   }
   
   private static func instance() -> DebugHead {
-    return UINib(nibName: "DebugHead", bundle: bundle).instantiateWithOwner(self, options: nil).first as! DebugHead
+    return DebugHead()
   }
   
   private static var bundle: NSBundle {
@@ -55,6 +67,7 @@ public class DebugHead: BugImageView {
 
   private var menuClasses = [DebugMenu.Type]()
   private var footerView: UIView?
+  private var ratioCenter = CGPoint.zero
   
   private var keyWindow: UIWindow? {
     return UIApplication.sharedApplication().keyWindow
@@ -64,6 +77,8 @@ public class DebugHead: BugImageView {
     frame.origin.x += recognizer.translationInView(self).x
     frame.origin.y += recognizer.translationInView(self).y
     recognizer.setTranslation(.zero, inView: self)
+    let screenSize = UIScreen.mainScreen().bounds.size
+    ratioCenter = CGPoint(x: center.x / screenSize.width, y: center.y / screenSize.height)
   }
   
   @objc private func tapped(recognizer: UITapGestureRecognizer) {
@@ -77,6 +92,11 @@ public class DebugHead: BugImageView {
   @objc private func addSubviewOnKeyWindow() {
     removeFromSuperview()
     keyWindow?.addSubview(self)
+  }
+    
+  @objc private func orientationDidChange() {
+    let screenSize = UIScreen.mainScreen().bounds.size
+    center = CGPoint(x: screenSize.width * ratioCenter.x, y: screenSize.height * ratioCenter.y)
   }
   
   private func findTopViewController(controller: UIViewController?) -> UIViewController? {

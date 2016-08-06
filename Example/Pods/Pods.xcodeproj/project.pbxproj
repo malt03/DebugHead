@@ -14,7 +14,6 @@
 		37438635E36073BA23042FEB188ABA07 /* DebugMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEBDC5B01E5FC7387EFEF84DBA9E0B37 /* DebugMenu.storyboard */; };
 		3966FF544D1B5FE69345C103E99A9C10 /* DebugMenuExit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B13FD76C339B789AC521574C6DDDA73 /* DebugMenuExit.swift */; };
 		3C1CD826F918ADCAD1FFFDF7766CD10E /* DebugHead.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 46E3C26D8A3656DEDE32F900C855B049 /* DebugHead.bundle */; };
-		478631A23C2503DC32A2289CFFC76A47 /* DebugHead.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70B117CC67E1B0DBF382B1CB3C5DC93A /* DebugHead.xib */; };
 		47FB3432F229D2697513968272204A1A /* Pods-DebugHead_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 20850E3277E01E5DE037C93D1501F522 /* Pods-DebugHead_Example-dummy.m */; };
 		4E8CE341F490A05D141650B924A1A9CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B4A663193DE84DC21E31F861833009 /* Foundation.framework */; };
 		57AD88758EDB5C5D1621B50D3CE2A79D /* DebugHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FAB9FC27D72B9F68696791257DE7A4 /* DebugHead.swift */; };
@@ -88,7 +87,6 @@
 		6D7CAEF088F0876E82F9BF7B1D7860A2 /* BugImageCreator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BugImageCreator.swift; path = BugImageCreator/Classes/BugImageCreator.swift; sourceTree = "<group>"; };
 		6ECF720FC2FDE6E6BF1455B99CC812A4 /* Pods-DebugHead_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-DebugHead_Tests.modulemap"; sourceTree = "<group>"; };
 		6FADA9A93B1C076AF5F7F9F908C228F5 /* DebugMenuHideDebugHead.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DebugMenuHideDebugHead.swift; sourceTree = "<group>"; };
-		70B117CC67E1B0DBF382B1CB3C5DC93A /* DebugHead.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = DebugHead.xib; sourceTree = "<group>"; };
 		772C6F5F2720AFE7D9BB223280465E3E /* DebugHead-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DebugHead-umbrella.h"; sourceTree = "<group>"; };
 		7F65D44A9337F47C59A47FB806C550D0 /* Pods-DebugHead_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DebugHead_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		865AA58E216FBA4343355E31768321B8 /* DebugHead.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = DebugHead.modulemap; sourceTree = "<group>"; };
@@ -179,7 +177,6 @@
 		46260E49AFAE528D9194087596E00DA5 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				70B117CC67E1B0DBF382B1CB3C5DC93A /* DebugHead.xib */,
 				BEBDC5B01E5FC7387EFEF84DBA9E0B37 /* DebugMenu.storyboard */,
 			);
 			path = Assets;
@@ -528,7 +525,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				478631A23C2503DC32A2289CFFC76A47 /* DebugHead.xib in Resources */,
 				37438635E36073BA23042FEB188ABA07 /* DebugMenu.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
