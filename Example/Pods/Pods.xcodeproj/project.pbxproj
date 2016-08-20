@@ -490,17 +490,6 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
-				TargetAttributes = {
-					00F2DF2138E6A9FAF67ED088A3AD977F = {
-						LastSwiftMigration = 0800;
-					};
-					1C3102D57DA8C0E3BAB172A6AFC9359A = {
-						LastSwiftMigration = 0800;
-					};
-					2933FF347F55024C3807DDAFF1EC5AA7 = {
-						LastSwiftMigration = 0800;
-					};
-				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -619,7 +608,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		4D206E29102EC6EF7A0D6F2C6797791D /* Release */ = {
+		2311BD59AE8E0972A3F07C198E9EF595 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 13D8C20A27232E5899281F0C79659549 /* BugImageCreator.xcconfig */;
 			buildSettings = {
@@ -649,6 +638,37 @@
 			};
 			name = Release;
 		};
+		37F4C9AEB4A9BAF1D5541596BF1648FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13D8C20A27232E5899281F0C79659549 /* BugImageCreator.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/BugImageCreator/BugImageCreator-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BugImageCreator/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/BugImageCreator/BugImageCreator.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = BugImageCreator;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		4E1D0B814883D2F78235CA02D6FC0094 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 568823CBF9F44F0A0C4E992305783D48 /* Pods-DebugHead_Tests.debug.xcconfig */;
@@ -676,68 +696,6 @@
 				PRODUCT_NAME = Pods_DebugHead_Tests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		618A1B1D908008D2CC664862FDB97050 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 026561A95DB723DC79A4C238CE65477C /* DebugHead.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/DebugHead/DebugHead-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/DebugHead/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/DebugHead/DebugHead.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = DebugHead;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		8A1CADA07349A0F4771227EA8B9B7801 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 13D8C20A27232E5899281F0C79659549 /* BugImageCreator.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/BugImageCreator/BugImageCreator-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/BugImageCreator/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/BugImageCreator/BugImageCreator.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = BugImageCreator;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -811,7 +769,6 @@
 				PRODUCT_NAME = Pods_DebugHead_Example;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -862,36 +819,6 @@
 			};
 			name = Debug;
 		};
-		BFD1298D3C3306F98282C1966192221E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 026561A95DB723DC79A4C238CE65477C /* DebugHead.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/DebugHead/DebugHead-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/DebugHead/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/DebugHead/DebugHead.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = DebugHead;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		C9DB2523E86008CE8793F7E10ACE9D24 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 026561A95DB723DC79A4C238CE65477C /* DebugHead.xcconfig */;
@@ -908,6 +835,37 @@
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
+		};
+		DFD17F39D7E1726ABB2280D991D47385 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 026561A95DB723DC79A4C238CE65477C /* DebugHead.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DebugHead/DebugHead-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DebugHead/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DebugHead/DebugHead.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = DebugHead;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		F20F39F4F688836464A4180179294F7F /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -959,6 +917,36 @@
 			};
 			name = Release;
 		};
+		FCA80F0072596B1EABF8A2795EB2DD1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 026561A95DB723DC79A4C238CE65477C /* DebugHead.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DebugHead/DebugHead-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DebugHead/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DebugHead/DebugHead.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = DebugHead;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		FD0D318117974C0773137CC6AA53F9B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 12D9F2D1E3A612FAAC601D330275CFF0 /* Pods-DebugHead_Example.debug.xcconfig */;
@@ -987,7 +975,6 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1018,8 +1005,8 @@
 		6CF003C6182D01B8C50B01169E42F4D2 /* Build configuration list for PBXNativeTarget "BugImageCreator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8A1CADA07349A0F4771227EA8B9B7801 /* Debug */,
-				4D206E29102EC6EF7A0D6F2C6797791D /* Release */,
+				37F4C9AEB4A9BAF1D5541596BF1648FC /* Debug */,
+				2311BD59AE8E0972A3F07C198E9EF595 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1027,8 +1014,8 @@
 		7F4FD9BB3613A0A90E3B33448A0BC97F /* Build configuration list for PBXNativeTarget "DebugHead" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				618A1B1D908008D2CC664862FDB97050 /* Debug */,
-				BFD1298D3C3306F98282C1966192221E /* Release */,
+				DFD17F39D7E1726ABB2280D991D47385 /* Debug */,
+				FCA80F0072596B1EABF8A2795EB2DD1C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
