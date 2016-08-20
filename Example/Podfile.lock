@@ -1,6 +1,6 @@
 PODS:
   - BugImageCreator (0.4.0-beta1)
-  - DebugHead (0.1.5):
+  - DebugHead (0.2.0-beta1):
     - BugImageCreator (~> 0.4.0-beta1)
 
 DEPENDENCIES:
@@ -21,7 +21,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   BugImageCreator: 60626f7dd94624d1957318795bd51aa36ff8e8a1
-  DebugHead: 5e9679edd7836609028caab154f0fd79e08298c4
+  DebugHead: 6545b1c1766a548eaa9ae34a4b8ab0afe5da8607
 
 PODFILE CHECKSUM: 84051b34262ac4f57413fb238dac107bbc908047
 
