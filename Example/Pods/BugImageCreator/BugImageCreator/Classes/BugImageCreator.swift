@@ -7,107 +7,109 @@
 
 import UIKit
 
-public class BugImageCreator {
-  public class func drawToCurrentContext(size s: CGFloat, center: CGPoint, lineWidth: CGFloat, color: UIColor) {
+open class BugImageCreator {
+  open class func drawToCurrentContext(size: CGFloat, center: CGPoint, lineWidth: CGFloat, color: UIColor) {
+    guard let context = UIGraphicsGetCurrentContext() else { return }
+    
     let cx = center.x
-    let cy = center.y + s / 10
-    let r = s * 3 / 8 - lineWidth / 2
+    let cy = center.y + size / 10
+    let r = size * 3 / 8 - lineWidth / 2
     let hr = r / 2
     let a = r / 5
     let f = r / 3
     
-    let context = UIGraphicsGetCurrentContext()
     color.setStroke()
-    CGContextSetLineWidth(context, lineWidth)
+    context.setLineWidth(lineWidth)
     
     // body
-    CGContextAddArc(context, cx, cy, r, -CGFloat(M_PI) / 3, -CGFloat(M_PI) / 3 * 2, 0)
-    CGContextClosePath(context)
+    let bodyCenter = CGPoint(x: cx, y: cy)
+    context.addArc(center: bodyCenter, radius: r, startAngle: -CGFloat(M_PI) / 3, endAngle: -CGFloat(M_PI) / 3 * 2, clockwise: false)
+    context.closePath()
     
     // head
     let headCenter = CGPoint(x: cx, y: cy - sin(CGFloat(M_PI / 3)) * r)
-    CGContextAddArc(context, headCenter.x, headCenter.y, hr, 0, CGFloat(M_PI), 1)
-    
-    CGContextAddLines(context, [
+    context.addArc(center: headCenter, radius: hr, startAngle: 0, endAngle: CGFloat(M_PI), clockwise: true)
+
+    context.addLines(between: [
       CGPoint(x: cx, y: cy - sin(CGFloat(M_PI / 3)) * r),
       CGPoint(x: cx, y: cy + r),
-      ], 2)
+    ])
     
     // antennae
-    CGContextAddLines(context, [
+    context.addLines(between: [
       CGPoint(x: headCenter.x + cos(CGFloat(M_PI) / 5 * 2) * hr, y: headCenter.y + sin(-CGFloat(M_PI) / 5 * 2) * hr),
       CGPoint(x: headCenter.x + cos(CGFloat(M_PI) / 5 * 2) * hr + a, y: headCenter.y - sin(CGFloat(M_PI) / 5 * 2) * hr - a),
-      ], 2)
-    CGContextAddLines(context, [
+    ])
+    context.addLines(between: [
       CGPoint(x: headCenter.x - cos(CGFloat(M_PI) / 5 * 2) * hr, y: headCenter.y + sin(-CGFloat(M_PI) / 5 * 2) * hr),
       CGPoint(x: headCenter.x - cos(CGFloat(M_PI) / 5 * 2) * hr - a, y: headCenter.y - sin(CGFloat(M_PI) / 5 * 2) * hr - a),
-      ], 2)
+    ])
     
     // feet
-    CGContextAddLines(context, [
+    context.addLines(between: [
       CGPoint(x: cx + r, y: cy),
       CGPoint(x: cx + r + f, y: cy),
-      ], 2)
-    CGContextAddLines(context, [
+    ])
+    context.addLines(between: [
       CGPoint(x: cx + cos(CGFloat(M_PI) / 6) * r, y: cy - sin(CGFloat(M_PI) / 6) * r),
       CGPoint(x: cx + cos(CGFloat(M_PI) / 6) * (r + f), y: cy - sin(CGFloat(M_PI) / 6) * (r + f)),
-      ], 2)
-    CGContextAddLines(context, [
+    ])
+    context.addLines(between: [
       CGPoint(x: cx + cos(CGFloat(M_PI) / 6) * r, y: cy + sin(CGFloat(M_PI) / 6) * r),
       CGPoint(x: cx + cos(CGFloat(M_PI) / 6) * (r + f), y: cy + sin(CGFloat(M_PI) / 6) * (r + f)),
-      ], 2)
-    CGContextAddLines(context, [
+    ])
+    context.addLines(between: [
       CGPoint(x: cx - r, y: cy),
       CGPoint(x: cx - r - f, y: cy),
-      ], 2)
-    CGContextAddLines(context, [
+    ])
+    context.addLines(between: [
       CGPoint(x: cx - cos(CGFloat(M_PI) / 6) * r, y: cy - sin(CGFloat(M_PI) / 6) * r),
       CGPoint(x: cx - cos(CGFloat(M_PI) / 6) * (r + f), y: cy - sin(CGFloat(M_PI) / 6) * (r + f)),
-      ], 2)
-    CGContextAddLines(context, [
+    ])
+    context.addLines(between: [
       CGPoint(x: cx - cos(CGFloat(M_PI) / 6) * r, y: cy + sin(CGFloat(M_PI) / 6) * r),
       CGPoint(x: cx - cos(CGFloat(M_PI) / 6) * (r + f), y: cy + sin(CGFloat(M_PI) / 6) * (r + f)),
-      ], 2)
+    ])
     
-    CGContextStrokePath(context)
+    context.strokePath()
   }
   
-  public class func getCacheOrCreate(size size: CGFloat, lineWidth: CGFloat, color: UIColor) -> UIImage {
+  open class func getCacheOrCreate(size: CGFloat, lineWidth: CGFloat, color: UIColor) -> UIImage {
     guard let url = cacheURL(size, lineWidth, color) else { return create(size: size, lineWidth: lineWidth, color: color) }
 
-    guard let data = NSData(contentsOfURL: url),
-      unscale = UIImage(data: data),
-      cgImage = unscale.CGImage else {
+    guard let data = try? Data(contentsOf: url),
+      let unscale = UIImage(data: data),
+      let cgImage = unscale.cgImage else {
       let i = create(size: size, lineWidth: lineWidth, color: color)
-      save(i, url: url)
+      save(i, url)
       return i
     }
     
-    return UIImage(CGImage: cgImage, scale: UIScreen.mainScreen().scale, orientation: .Up)
+    return UIImage(cgImage: cgImage, scale: UIScreen.main.scale, orientation: .up)
   }
   
-  public class func create(size s: CGFloat, lineWidth: CGFloat, color: UIColor) -> UIImage {
-    UIGraphicsBeginImageContextWithOptions(CGSize(width: s, height: s), false, 0)
+  open class func create(size: CGFloat, lineWidth: CGFloat, color: UIColor) -> UIImage {
+    UIGraphicsBeginImageContextWithOptions(CGSize(width: size, height: size), false, 0)
     
-    drawToCurrentContext(size: s, center: CGPoint(x: s / 2, y: s / 2), lineWidth: lineWidth, color: color)
+    drawToCurrentContext(size: size, center: CGPoint(x: size / 2, y: size / 2), lineWidth: lineWidth, color: color)
     
     return UIGraphicsGetImageFromCurrentImageContext()!
   }
   
-  private class func save(image: UIImage, url: NSURL) {
+  fileprivate class func save(_ image: UIImage, _ url: URL) {
     guard let data = UIImagePNGRepresentation(image) else { return }
-    data.writeToURL(url, atomically: true)
+    try? data.write(to: url, options: [.atomic])
   }
   
-  private class func cacheURL(size: CGFloat, _ lineWidth: CGFloat, _ color: UIColor) -> NSURL? {
-    let fileManager = NSFileManager.defaultManager()
-    guard let cacheDirectoryURL = try? fileManager.URLForDirectory(.CachesDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: true) else { return nil }
-    let directoryURL = cacheDirectoryURL.URLByAppendingPathComponent("bug_image_creator", isDirectory: true)
+  fileprivate class func cacheURL(_ size: CGFloat, _ lineWidth: CGFloat, _ color: UIColor) -> URL? {
+    let fileManager = FileManager.default
+    guard let cacheDirectoryURL = try? fileManager.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true) else { return nil }
+    let directoryURL = cacheDirectoryURL.appendingPathComponent("bug_image_creator", isDirectory: true)
     do {
-      try fileManager.createDirectoryAtURL(directoryURL, withIntermediateDirectories: true, attributes: nil)
+      try fileManager.createDirectory(at: directoryURL, withIntermediateDirectories: true, attributes: nil)
     } catch {
       return nil
     }
-    return directoryURL.URLByAppendingPathComponent("s\(size)l\(lineWidth)c\(color).png")
+    return directoryURL.appendingPathComponent("s\(size)l\(lineWidth)c\(color).png")
   }
 }
