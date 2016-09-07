@@ -17,7 +17,7 @@ public class DebugHead: BugImageView {
     center c: CGPoint = CGPoint(x: UIScreen.mainScreen().bounds.size.width - 50, y: UIScreen.mainScreen().bounds.size.height - 50),
     sorting: Bool = true,
     footerView fv: UIView? = nil,
-    openNow openNow: Bool = false
+    openImmediately openImmediately: Bool = false
   ) {
     center = c
     let screenSize = UIScreen.mainScreen().bounds.size
@@ -35,7 +35,7 @@ public class DebugHead: BugImageView {
       menuClasses.sortInPlace { $0.debugMenuDangerLevel.rawValue < $1.debugMenuDangerLevel.rawValue }
     }
     
-    if openNow {
+    if openImmediately {
       dispatch_async(dispatch_get_main_queue(), {
         self.openDebugMenu()
       })
