@@ -17,7 +17,7 @@ public class DebugHead: BugImageView {
     center c: CGPoint = CGPoint(x: UIScreen.mainScreen().bounds.size.width - 50, y: UIScreen.mainScreen().bounds.size.height - 50),
     sorting: Bool = true,
     footerView fv: UIView? = nil,
-    openImmediately openImmediately: Bool = false
+    openImmediately: Bool = false
   ) {
     center = c
     let screenSize = UIScreen.mainScreen().bounds.size
