@@ -16,7 +16,8 @@ public class DebugHead: BugImageView {
     menuClasses m: [DebugMenu.Type],
     center c: CGPoint = CGPoint(x: UIScreen.mainScreen().bounds.size.width - 50, y: UIScreen.mainScreen().bounds.size.height - 50),
     sorting: Bool = true,
-    footerView fv: UIView? = nil
+    footerView fv: UIView? = nil,
+    openNow openNow: Bool = false
   ) {
     center = c
     let screenSize = UIScreen.mainScreen().bounds.size
@@ -32,6 +33,12 @@ public class DebugHead: BugImageView {
     
     if sorting {
       menuClasses.sortInPlace { $0.debugMenuDangerLevel.rawValue < $1.debugMenuDangerLevel.rawValue }
+    }
+    
+    if openNow {
+      dispatch_async(dispatch_get_main_queue(), {
+        self.openDebugMenu()
+      })
     }
   }
   
@@ -82,6 +89,10 @@ public class DebugHead: BugImageView {
   }
   
   @objc private func tapped(recognizer: UITapGestureRecognizer) {
+    openDebugMenu()
+  }
+  
+  private func openDebugMenu() {
     let nc = UIStoryboard(name: "DebugMenu", bundle: DebugHead.bundle).instantiateInitialViewController() as! UINavigationController
     let vc = nc.topViewController as! DebugMenuTableViewController
     vc.prepare(menuClasses, footerView)
