@@ -10,7 +10,7 @@ import UIKit
 import BugImageCreator
 
 open class DebugHead: BugImageView {
-  open static let sharedInstance = DebugHead.instance()
+  open static let shared = DebugHead.instance()
 
   open func prepare(
     menuClasses m: [DebugMenu.Type],
