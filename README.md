@@ -48,7 +48,6 @@ DebugHead is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'BugImageCreator', git: 'https://github.com/malt03/BugImageCreator.git', tag: '0.4.0-beta1'
 pod "DebugHead"
 ```
 

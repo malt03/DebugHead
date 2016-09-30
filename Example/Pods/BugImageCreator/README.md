@@ -1,7 +1,7 @@
 # BugImageCreator
 
 [![Platform](https://img.shields.io/cocoapods/p/BugImageCreator.svg?style=flat)](http://cocoapods.org/pods/BugImageCreator)
-![Language](https://img.shields.io/badge/language-Swift%202.2-orange.svg)
+![Language](https://img.shields.io/badge/language-Swift%203.0-orange.svg)
 [![CocoaPods](https://img.shields.io/cocoapods/v/BugImageCreator.svg?style=flat)](http://cocoapods.org/pods/BugImageCreator)
 ![License](https://img.shields.io/github/license/malt03/BugImageCreator.svg?style=flat)
 
