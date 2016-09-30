@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'DebugHead'
-  s.version          = '0.2.0-beta1'
+  s.version          = '0.2.0-beta2'
   s.summary          = 'DebugHead like Facebook chat head.'
 
 # This description is used to generate tags and improve search results.
@@ -37,7 +37,7 @@ And, you can make plugin easy.
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'DebugHead/Classes/**/*'
-  
+
   s.resource_bundles = {
     'DebugHead' => ['DebugHead/Assets/*']
   }

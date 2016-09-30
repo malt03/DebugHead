@@ -11,7 +11,7 @@ import UIKit
 class DebugMenuTableViewController: UITableViewController {
   @IBAction func close() {
     dismiss(animated: true, completion: nil)
-    UIView.animate(withDuration: 0.3) { DebugHead.sharedInstance.alpha = 1 }
+    UIView.animate(withDuration: 0.3) { DebugHead.shared.alpha = 1 }
   }
   
   func prepare(_ m: [DebugMenu.Type], _ fv: UIView?) {
@@ -37,7 +37,7 @@ class DebugMenuTableViewController: UITableViewController {
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "default", for: indexPath)
-    let menuClass = menuClasses[(indexPath as NSIndexPath).row]
+    let menuClass = menuClasses[indexPath.row]
     cell.textLabel?.textColor = UIColor.fromDangerLevel(menuClass.debugMenuDangerLevel)
     cell.textLabel?.text = menuClass.debugMenuTitle
     cell.accessoryType = menuClass.debugMenuAccessoryType
@@ -45,7 +45,7 @@ class DebugMenuTableViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    guard let vc = menuClasses[(indexPath as NSIndexPath).row].debugMenuSelected(DebugHead.sharedInstance, debugMenuTableViewController: self) else {
+    guard let vc = menuClasses[indexPath.row].debugMenuSelected(DebugHead.shared, debugMenuTableViewController: self) else {
       tableView.deselectRow(at: indexPath, animated: true)
       return
     }

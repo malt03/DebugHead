@@ -10,13 +10,14 @@ import UIKit
 import BugImageCreator
 
 open class DebugHead: BugImageView {
-  open static let sharedInstance = DebugHead.instance()
+  open static let shared = DebugHead.instance()
 
   open func prepare(
     menuClasses m: [DebugMenu.Type],
     center c: CGPoint = CGPoint(x: UIScreen.main.bounds.size.width - 50, y: UIScreen.main.bounds.size.height - 50),
     sorting: Bool = true,
-    footerView fv: UIView? = nil
+    footerView fv: UIView? = nil,
+    openImmediately: Bool = false
   ) {
     center = c
     let screenSize = UIScreen.main.bounds.size
@@ -32,6 +33,12 @@ open class DebugHead: BugImageView {
     
     if sorting {
       menuClasses.sort { $0.debugMenuDangerLevel.rawValue < $1.debugMenuDangerLevel.rawValue }
+    }
+    
+    if openImmediately {
+      DispatchQueue.main.async { [weak self] in
+        self?.openDebugMenu()
+      }
     }
   }
   
@@ -82,6 +89,10 @@ open class DebugHead: BugImageView {
   }
   
   @objc fileprivate func tapped(_ recognizer: UITapGestureRecognizer) {
+    openDebugMenu()
+  }
+  
+  private func openDebugMenu() {
     let nc = UIStoryboard(name: "DebugMenu", bundle: DebugHead.bundle).instantiateInitialViewController() as! UINavigationController
     let vc = nc.topViewController as! DebugMenuTableViewController
     vc.prepare(menuClasses, footerView)
