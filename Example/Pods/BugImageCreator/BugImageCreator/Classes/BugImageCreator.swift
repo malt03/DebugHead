@@ -96,12 +96,12 @@ open class BugImageCreator {
     return UIGraphicsGetImageFromCurrentImageContext()!
   }
   
-  fileprivate class func save(_ image: UIImage, _ url: URL) {
+  private class func save(_ image: UIImage, _ url: URL) {
     guard let data = UIImagePNGRepresentation(image) else { return }
     try? data.write(to: url, options: [.atomic])
   }
   
-  fileprivate class func cacheURL(_ size: CGFloat, _ lineWidth: CGFloat, _ color: UIColor) -> URL? {
+  private class func cacheURL(_ size: CGFloat, _ lineWidth: CGFloat, _ color: UIColor) -> URL? {
     let fileManager = FileManager.default
     guard let cacheDirectoryURL = try? fileManager.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true) else { return nil }
     let directoryURL = cacheDirectoryURL.appendingPathComponent("bug_image_creator", isDirectory: true)

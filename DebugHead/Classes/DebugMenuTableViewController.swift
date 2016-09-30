@@ -18,8 +18,8 @@ class DebugMenuTableViewController: UITableViewController {
     menuClasses = m
     footerView = fv
   }
-  fileprivate var menuClasses = [DebugMenu.Type]()
-  fileprivate var footerView: UIView?
+  private var menuClasses = [DebugMenu.Type]()
+  private var footerView: UIView?
   
   override func viewDidLoad() {
     super.viewDidLoad()
