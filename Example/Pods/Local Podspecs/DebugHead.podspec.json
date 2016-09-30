@@ -1,6 +1,6 @@
 {
   "name": "DebugHead",
-  "version": "0.1.2",
+  "version": "0.2.0-beta1",
   "summary": "DebugHead like Facebook chat head.",
   "description": "DebugHead is a pod for debug.\nIt can present a view like Facebook chat head.\nWhen you tap it, it will open a debug menu.\nAnd, you can make plugin easy.",
   "homepage": "https://github.com/malt03/DebugHead",
@@ -15,7 +15,7 @@
   },
   "source": {
     "git": "https://github.com/malt03/DebugHead.git",
-    "tag": "0.1.2"
+    "tag": "0.2.0-beta1"
   },
   "platforms": {
     "ios": "8.0"
@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "BugImageCreator": [
-      "~> 0.3.0"
+      "~> 0.4.0-beta1"
     ]
   }
 }

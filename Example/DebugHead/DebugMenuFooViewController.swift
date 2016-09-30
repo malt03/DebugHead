@@ -11,9 +11,9 @@ import DebugHead
 
 class DebugMenuFooViewController: UIViewController, DebugMenu {
   static let debugMenuTitle = "Foo"
-  static let debugMenuAccessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-  static let debugMenuDangerLevel = DebugMenuDangerLevel.None
-  static func debugMenuSelected(debugHead: UIView, debugMenuTableViewController: UITableViewController) -> UIViewController? {
-    return UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("Foo")
+  static let debugMenuAccessoryType = UITableViewCellAccessoryType.disclosureIndicator
+  static let debugMenuDangerLevel = DebugMenuDangerLevel.none
+  static func debugMenuSelected(_ debugHead: UIView, debugMenuTableViewController: UITableViewController) -> UIViewController? {
+    return UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "Foo")
   }
 }

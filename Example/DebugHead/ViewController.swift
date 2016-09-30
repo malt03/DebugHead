@@ -10,7 +10,7 @@ import UIKit
 import DebugHead
 
 class ViewController: UIViewController {
-  override func preferredStatusBarStyle() -> UIStatusBarStyle {
-    return .LightContent
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    return .lightContent
   }
 }

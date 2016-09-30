@@ -8,13 +8,13 @@
 
 import UIKit
 
-public class BugImageView: UIView {
-  @IBInspectable public var bugSize: CGFloat = 50
-  @IBInspectable public var bugLineWidth: CGFloat = 1
-  @IBInspectable public var bugColor: UIColor = .blackColor()
+open class BugImageView: UIView {
+  @IBInspectable open var bugSize: CGFloat = 50
+  @IBInspectable open var bugLineWidth: CGFloat = 1
+  @IBInspectable open var bugColor: UIColor = .black
   
-  public override func drawRect(rect: CGRect) {
-    super.drawRect(rect)
+  open override func draw(_ rect: CGRect) {
+    super.draw(rect)
     BugImageCreator.drawToCurrentContext(size: bugSize, center: CGPoint(x: rect.width / 2, y: rect.height / 2), lineWidth: bugLineWidth, color: bugColor)
   }
 }

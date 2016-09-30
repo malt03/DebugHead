@@ -1,19 +1,28 @@
 PODS:
-  - BugImageCreator (0.3.0)
-  - DebugHead (0.1.2):
-    - BugImageCreator (~> 0.3.0)
+  - BugImageCreator (0.4.0-beta1)
+  - DebugHead (0.2.0-beta1):
+    - BugImageCreator (~> 0.4.0-beta1)
 
 DEPENDENCIES:
+  - BugImageCreator (from `https://github.com/malt03/BugImageCreator.git`, tag `0.4.0-beta1`)
   - DebugHead (from `../`)
 
 EXTERNAL SOURCES:
+  BugImageCreator:
+    :git: https://github.com/malt03/BugImageCreator.git
+    :tag: 0.4.0-beta1
   DebugHead:
     :path: "../"
 
+CHECKOUT OPTIONS:
+  BugImageCreator:
+    :git: https://github.com/malt03/BugImageCreator.git
+    :tag: 0.4.0-beta1
+
 SPEC CHECKSUMS:
-  BugImageCreator: df4712f25538333550477121b5499a0aaf46479f
-  DebugHead: 4f87988ddb9ec961ef1aabfcfa5b7b640f9c4b13
+  BugImageCreator: 60626f7dd94624d1957318795bd51aa36ff8e8a1
+  DebugHead: 6545b1c1766a548eaa9ae34a4b8ab0afe5da8607
 
-PODFILE CHECKSUM: a16a0a825ea1dee16416384c48f0ce94b8c73e22
+PODFILE CHECKSUM: 84051b34262ac4f57413fb238dac107bbc908047
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.1.0.beta.1

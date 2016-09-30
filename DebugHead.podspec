@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'DebugHead'
-  s.version          = '0.1.6'
+  s.version          = '0.2.0-beta2'
   s.summary          = 'DebugHead like Facebook chat head.'
 
 # This description is used to generate tags and improve search results.
@@ -37,12 +37,12 @@ And, you can make plugin easy.
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'DebugHead/Classes/**/*'
-  
+
   s.resource_bundles = {
     'DebugHead' => ['DebugHead/Assets/*']
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  s.dependency 'BugImageCreator', '~> 0.3.0'
+  s.dependency 'BugImageCreator', '~> 0.4.0-beta1'
 end

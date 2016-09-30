@@ -6,17 +6,18 @@
 //
 //
 
-public class DebugMenuHideDebugHead: DebugMenu {
-  public static let debugMenuTitle = "Hide Debug Head"
-  public static let debugMenuDangerLevel = DebugMenuDangerLevel.High
-  public static let debugMenuAccessoryType = UITableViewCellAccessoryType.None
-  public static func debugMenuSelected(debugHead: UIView, debugMenuTableViewController: UITableViewController) -> UIViewController? {
-    let alert = UIAlertController(title: "Exit", message: nil, preferredStyle: .Alert)
-    alert.addAction(UIAlertAction(title: "OK", style: .Destructive) { _ in
-      debugHead.hidden = true
+open class DebugMenuHideDebugHead: DebugMenu {
+  open static let debugMenuTitle = "Hide Debug Head"
+  open static let debugMenuDangerLevel = DebugMenuDangerLevel.high
+  open static let debugMenuAccessoryType = UITableViewCellAccessoryType.none
+  open static func debugMenuSelected(_ debugHead: UIView, debugMenuTableViewController: UITableViewController) -> UIViewController? {
+    let alert = UIAlertController(title: "Hide?", message: nil, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "OK", style: .destructive) { _ in
+      debugHead.isHidden = true
+      debugMenuTableViewController.dismiss(animated: true, completion: nil)
     })
-    alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-    debugMenuTableViewController.presentViewController(alert, animated: true, completion: nil)
+    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+    debugMenuTableViewController.present(alert, animated: true, completion: nil)
     return nil
   }
 }

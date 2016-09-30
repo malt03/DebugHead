@@ -1,11 +1,10 @@
 use_frameworks!
 
 target 'DebugHead_Example' do
+  pod 'BugImageCreator', git: 'https://github.com/malt03/BugImageCreator.git', tag: '0.4.0-beta1'
   pod 'DebugHead', :path => '../'
 
   target 'DebugHead_Tests' do
     inherit! :search_paths
-
-    
   end
 end

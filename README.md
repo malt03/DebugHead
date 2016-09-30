@@ -1,7 +1,7 @@
 # DebugHead
 
 [![Platform](https://img.shields.io/cocoapods/p/DebugHead.svg?style=flat)](http://cocoapods.org/pods/DebugHead)
-![Language](https://img.shields.io/badge/language-Swift%202.2-orange.svg)
+![Language](https://img.shields.io/badge/language-Swift%203.0-orange.svg)
 [![CocoaPods](https://img.shields.io/cocoapods/v/DebugHead.svg?style=flat)](http://cocoapods.org/pods/DebugHead)
 ![License](https://img.shields.io/github/license/malt03/DebugHead.svg?style=flat)
 
@@ -48,6 +48,7 @@ DebugHead is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
+pod 'BugImageCreator', git: 'https://github.com/malt03/BugImageCreator.git', tag: '0.4.0-beta1'
 pod "DebugHead"
 ```
 
