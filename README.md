@@ -41,6 +41,7 @@ public class DebugMenuFoo: DebugMenu {
 ## Recommended Plugins
 - [DebugMenuUserDefaultsBrowser](https://cocoapods.org/pods/DebugMenuUserDefaultsBrowser)
 - [DebugMenuGPUImageDumper](https://cocoapods.org/pods/DebugMenuGPUImageDumper)
+- [DebugMenuFinder](http://cocoapods.org/pods/DebugMenuFinder)
 
 ## Installation
 
