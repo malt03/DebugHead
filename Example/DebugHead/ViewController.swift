@@ -13,4 +13,8 @@ class ViewController: UIViewController {
   override var preferredStatusBarStyle: UIStatusBarStyle {
     return .lightContent
   }
+  
+  @IBAction private func changeWindow() {
+    UIApplication.shared.keyWindow?.rootViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "Foo")
+  }
 }

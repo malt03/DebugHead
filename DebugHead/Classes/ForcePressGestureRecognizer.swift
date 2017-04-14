@@ -1,5 +1,5 @@
 //
-//  FourceTouchablePanGestureRecognizer.swift
+//  ForceTouchablePanGestureRecognizer.swift
 //  Pods
 //
 //  Created by Koji Murata on 2017/04/13.
@@ -9,16 +9,17 @@
 import UIKit
 import UIKit.UIGestureRecognizerSubclass
 
-final class FourceTouchGestureRecognizer: UIGestureRecognizer {
-  private let feedbackGenerator: NSObject?
-  
-  override init(target: Any?, action: Selector?) {
+final class ForcePressGestureRecognizer: UIGestureRecognizer {
+  private var feedbackGenerator: NSObject?
+  override func addTarget(_ target: Any, action: Selector) {
+    super.addTarget(target, action: action)
     if #available(iOS 10.0, *) {
-      feedbackGenerator = UIImpactFeedbackGenerator(style: .heavy)
+      if feedbackGenerator == nil {
+        feedbackGenerator = UIImpactFeedbackGenerator(style: .heavy)
+      }
     } else {
       feedbackGenerator = nil
     }
-    super.init(target: target, action: action)
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent) {
