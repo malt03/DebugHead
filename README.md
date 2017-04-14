@@ -47,6 +47,9 @@ public class DebugMenuFoo: DebugMenu {
 }
 ```
 
+### Other Features
+- You can remove the head with force touch.
+
 ## Built-in Plugins
 - DebugMenuHideDebugHead
 - DebugMenuExit
