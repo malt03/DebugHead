@@ -12,11 +12,10 @@
 		0A4FA8BAC05A4A8FE72FE7448BEAB51C /* BugImageCreator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 378926E1E1EC3338E68D2A5D96B6A504 /* BugImageCreator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0C4EF0E9EDF9ED7374FEEE5C9F681997 /* DebugHead-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 268C846271D79191139EECD13B601821 /* DebugHead-dummy.m */; };
 		0D7C79F28A26CA5C53D2BDE071D24933 /* BugImageCreator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DA65442062F310AE01BF9CAF0BF9DBA8 /* BugImageCreator-dummy.m */; };
-		0FFF13CC12B0086A03002984CDF5EBE7 /* DebugMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26E283EF32BD4FDF073F74196267415B /* DebugMenu.storyboard */; };
 		13809F7868E57929D3DB4FE8CEE5B025 /* BugImageCreator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF4F5F94E4729665076A18860DF983B6 /* BugImageCreator.framework */; };
 		1DC63A33EB5DC1042597332CB2EB6569 /* Pods-DebugHead_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3AE811D26C6B106AC05C718470E8E0 /* Pods-DebugHead_Tests-dummy.m */; };
 		2602B99C0FDE284406984AF540DE7B8E /* BugImageCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CAEF088F0876E82F9BF7B1D7860A2 /* BugImageCreator.swift */; };
-		34EE4EBAC5400BFBFC8CDAE245948F76 /* DebugHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FAB9FC27D72B9F68696791257DE7A4 /* DebugHead.swift */; };
+		34EE4EBAC5400BFBFC8CDAE245948F76 /* DebugHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FAB9FC27D72B9F68696791257DE7A4 /* DebugHeadView.swift */; };
 		38F440162003C8579D6F2C1682F39EEE /* DebugMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929521A4700660D7796BF2B4E5191915 /* DebugMenuTableViewController.swift */; };
 		3EF61493944D6697E1261B4F27D0DB9C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63090FEBDFC3EE0288954CE876900DDA /* Foundation.framework */; };
 		538CCC986C2CE7C0FECF687CAFD75228 /* DebugMenuHideDebugHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FADA9A93B1C076AF5F7F9F908C228F5 /* DebugMenuHideDebugHead.swift */; };
@@ -28,7 +27,9 @@
 		A7B592331F8D3B0635A4B3D1B425E27B /* DebugHead.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 46E3C26D8A3656DEDE32F900C855B049 /* DebugHead.bundle */; };
 		B339A7C0C8E9514010D1027CB643C027 /* DebugMenuExit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B13FD76C339B789AC521574C6DDDA73 /* DebugMenuExit.swift */; };
 		B993E1F5B10874BAACBD3A55A604C66B /* Pods-DebugHead_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 20850E3277E01E5DE037C93D1501F522 /* Pods-DebugHead_Example-dummy.m */; };
-		ED4ADD721E9F99C60070E5BD /* FourceTouchablePanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4ADD711E9F99C60070E5BD /* FourceTouchablePanGestureRecognizer.swift */; };
+		ED4ADD721E9F99C60070E5BD /* FourcePressGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4ADD711E9F99C60070E5BD /* FourcePressGestureRecognizer.swift */; };
+		EDDDC7181EA1333A006D3295 /* DebugHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDDC7171EA1333A006D3295 /* DebugHead.swift */; };
+		EDDDC7191EA136FE006D3295 /* DebugMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26E283EF32BD4FDF073F74196267415B /* DebugMenu.storyboard */; };
 		F5D23184D7120C2920F5DEDD7E50218C /* DebugHead-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 772C6F5F2720AFE7D9BB223280465E3E /* DebugHead-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -110,9 +111,10 @@
 		DB3AE811D26C6B106AC05C718470E8E0 /* Pods-DebugHead_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DebugHead_Tests-dummy.m"; sourceTree = "<group>"; };
 		DB4D093ED773B4124D16F7CAED96AB94 /* Pods-DebugHead_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DebugHead_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		E3775F0878C8C372821EA0E83DEF44ED /* BugImageCreator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = BugImageCreator.modulemap; sourceTree = "<group>"; };
-		E6FAB9FC27D72B9F68696791257DE7A4 /* DebugHead.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DebugHead.swift; sourceTree = "<group>"; };
+		E6FAB9FC27D72B9F68696791257DE7A4 /* DebugHeadView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DebugHeadView.swift; sourceTree = "<group>"; };
 		E87AC0CA494228EA09CAB1902CAA9224 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ED4ADD711E9F99C60070E5BD /* FourceTouchablePanGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourceTouchablePanGestureRecognizer.swift; sourceTree = "<group>"; };
+		ED4ADD711E9F99C60070E5BD /* FourcePressGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourcePressGestureRecognizer.swift; sourceTree = "<group>"; };
+		EDDDC7171EA1333A006D3295 /* DebugHead.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugHead.swift; sourceTree = "<group>"; };
 		F8CE1AB754661A0793F794194BCD9210 /* DebugMenu.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DebugMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -270,12 +272,13 @@
 		C78D37BDA445847FB1B5B7A64FAF7B39 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				E6FAB9FC27D72B9F68696791257DE7A4 /* DebugHead.swift */,
+				EDDDC7171EA1333A006D3295 /* DebugHead.swift */,
+				E6FAB9FC27D72B9F68696791257DE7A4 /* DebugHeadView.swift */,
 				F8CE1AB754661A0793F794194BCD9210 /* DebugMenu.swift */,
 				1B13FD76C339B789AC521574C6DDDA73 /* DebugMenuExit.swift */,
 				6FADA9A93B1C076AF5F7F9F908C228F5 /* DebugMenuHideDebugHead.swift */,
 				929521A4700660D7796BF2B4E5191915 /* DebugMenuTableViewController.swift */,
-				ED4ADD711E9F99C60070E5BD /* FourceTouchablePanGestureRecognizer.swift */,
+				ED4ADD711E9F99C60070E5BD /* FourcePressGestureRecognizer.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7B592331F8D3B0635A4B3D1B425E27B /* DebugHead.bundle in Resources */,
+				EDDDC7191EA136FE006D3295 /* DebugMenu.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,7 +532,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FFF13CC12B0086A03002984CDF5EBE7 /* DebugMenu.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,10 +576,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C4EF0E9EDF9ED7374FEEE5C9F681997 /* DebugHead-dummy.m in Sources */,
-				34EE4EBAC5400BFBFC8CDAE245948F76 /* DebugHead.swift in Sources */,
+				34EE4EBAC5400BFBFC8CDAE245948F76 /* DebugHeadView.swift in Sources */,
 				61554AA8A8907B43D6C3633DB1C8AC4B /* DebugMenu.swift in Sources */,
+				EDDDC7181EA1333A006D3295 /* DebugHead.swift in Sources */,
 				B339A7C0C8E9514010D1027CB643C027 /* DebugMenuExit.swift in Sources */,
-				ED4ADD721E9F99C60070E5BD /* FourceTouchablePanGestureRecognizer.swift in Sources */,
+				ED4ADD721E9F99C60070E5BD /* FourcePressGestureRecognizer.swift in Sources */,
 				538CCC986C2CE7C0FECF687CAFD75228 /* DebugMenuHideDebugHead.swift in Sources */,
 				38F440162003C8579D6F2C1682F39EEE /* DebugMenuTableViewController.swift in Sources */,
 			);

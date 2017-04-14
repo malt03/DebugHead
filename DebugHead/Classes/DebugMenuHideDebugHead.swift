@@ -13,7 +13,7 @@ open class DebugMenuHideDebugHead: DebugMenu {
   open static func debugMenuSelected(_ debugHead: UIView, debugMenuTableViewController: UITableViewController) -> UIViewController? {
     let alert = UIAlertController(title: "Hide?", message: nil, preferredStyle: .alert)
     alert.addAction(UIAlertAction(title: "OK", style: .destructive) { _ in
-      debugHead.isHidden = true
+      DebugHead.shared.remove()
       debugMenuTableViewController.dismiss(animated: true, completion: nil)
     })
     alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
