@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DebugMenuTableViewController: UITableViewController {
+final class DebugMenuTableViewController: UITableViewController {
   @IBAction func close() {
     dismiss(animated: true, completion: nil)
     UIView.animate(withDuration: 0.3) { DebugHead.shared.debugHeadView?.alpha = 1 }

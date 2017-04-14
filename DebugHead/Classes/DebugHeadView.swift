@@ -117,7 +117,7 @@ final class DebugHeadView: BugImageView {
     observingWindow = keyWindow
   }
   
-  open override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+  override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
     addSubviewOnKeyWindow()
   }
     
