@@ -25,8 +25,11 @@ open class DebugHead: BugImageView {
     
     let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(panned(_:)))
     let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapped(_:)))
+    let forceTouchGestureRecognizer = FourceTouchGestureRecognizer(target: self, action: #selector(fourceTouched))
+    
     addGestureRecognizer(panGestureRecognizer)
     addGestureRecognizer(tapGestureRecognizer)
+    addGestureRecognizer(forceTouchGestureRecognizer)
     
     menuClasses = m
     footerView = fv
@@ -90,6 +93,10 @@ open class DebugHead: BugImageView {
   
   @objc private func tapped(_ recognizer: UITapGestureRecognizer) {
     openDebugMenu()
+  }
+  
+  @objc private func fourceTouched() {
+    removeFromSuperview()
   }
   
   private func openDebugMenu() {
