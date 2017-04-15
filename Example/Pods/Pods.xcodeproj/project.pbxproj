@@ -28,8 +28,8 @@
 		B339A7C0C8E9514010D1027CB643C027 /* DebugMenuExit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B13FD76C339B789AC521574C6DDDA73 /* DebugMenuExit.swift */; };
 		B993E1F5B10874BAACBD3A55A604C66B /* Pods-DebugHead_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 20850E3277E01E5DE037C93D1501F522 /* Pods-DebugHead_Example-dummy.m */; };
 		ED4ADD721E9F99C60070E5BD /* FourcePressGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4ADD711E9F99C60070E5BD /* FourcePressGestureRecognizer.swift */; };
+		ED89126B1EA20BF900088F2B /* DebugMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26E283EF32BD4FDF073F74196267415B /* DebugMenu.storyboard */; };
 		EDDDC7181EA1333A006D3295 /* DebugHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDDC7171EA1333A006D3295 /* DebugHead.swift */; };
-		EDDDC7191EA136FE006D3295 /* DebugMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26E283EF32BD4FDF073F74196267415B /* DebugMenu.storyboard */; };
 		F5D23184D7120C2920F5DEDD7E50218C /* DebugHead-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 772C6F5F2720AFE7D9BB223280465E3E /* DebugHead-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -524,7 +524,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7B592331F8D3B0635A4B3D1B425E27B /* DebugHead.bundle in Resources */,
-				EDDDC7191EA136FE006D3295 /* DebugMenu.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,6 +531,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED89126B1EA20BF900088F2B /* DebugMenu.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

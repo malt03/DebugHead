@@ -75,7 +75,7 @@ final class DebugHeadView: BugImageView {
   }
   
   private static var bundle: Bundle {
-    return Bundle(for: DebugHead.self)
+    return Bundle(path: Bundle(for: DebugHead.self).path(forResource: "DebugHead", ofType: "bundle")!)!
   }
 
   private let menuClasses: [DebugMenu.Type]
