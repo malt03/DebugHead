@@ -70,8 +70,9 @@ final class DebugHeadView: BugImageView {
   }
   
   private func prepareNotifications() {
-    NotificationCenter.default.addObserver(self, selector: #selector(addSubviewOnKeyWindow), name: NSNotification.Name.UIWindowDidBecomeKey, object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(orientationDidChange), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(removeObserving), name: .UIWindowDidBecomeHidden, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(addSubviewOnKeyWindow), name: .UIWindowDidBecomeKey, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(orientationDidChange), name: .UIDeviceOrientationDidChange, object: nil)
   }
   
   private static var bundle: Bundle {
@@ -115,6 +116,11 @@ final class DebugHeadView: BugImageView {
     keyWindow?.addSubview(self)
     keyWindow?.addObserver(self, forKeyPath: "rootViewController", options: .new, context: nil)
     observingWindow = keyWindow
+  }
+  
+  @objc private func removeObserving() {
+    observingWindow?.removeObserver(self, forKeyPath: "rootViewController")
+    observingWindow = nil
   }
   
   override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
