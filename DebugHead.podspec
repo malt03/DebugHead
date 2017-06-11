@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'DebugHead'
-  s.version          = '1.1.3'
+  s.version          = '1.1.4'
   s.summary          = 'DebugHead like Facebook chat head.'
 
 # This description is used to generate tags and improve search results.
