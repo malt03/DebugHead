@@ -29,6 +29,7 @@
 		B993E1F5B10874BAACBD3A55A604C66B /* Pods-DebugHead_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 20850E3277E01E5DE037C93D1501F522 /* Pods-DebugHead_Example-dummy.m */; };
 		ED4ADD721E9F99C60070E5BD /* FourcePressGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4ADD711E9F99C60070E5BD /* FourcePressGestureRecognizer.swift */; };
 		ED89126B1EA20BF900088F2B /* DebugMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26E283EF32BD4FDF073F74196267415B /* DebugMenu.storyboard */; };
+		EDDD8A321EEDA0910060AFAF /* UIWindow+DidAddSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDD8A301EEDA08C0060AFAF /* UIWindow+DidAddSubview.swift */; };
 		EDDDC7181EA1333A006D3295 /* DebugHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDDC7171EA1333A006D3295 /* DebugHead.swift */; };
 		F5D23184D7120C2920F5DEDD7E50218C /* DebugHead-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 772C6F5F2720AFE7D9BB223280465E3E /* DebugHead-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -114,6 +115,7 @@
 		E6FAB9FC27D72B9F68696791257DE7A4 /* DebugHeadView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DebugHeadView.swift; sourceTree = "<group>"; };
 		E87AC0CA494228EA09CAB1902CAA9224 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED4ADD711E9F99C60070E5BD /* FourcePressGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourcePressGestureRecognizer.swift; sourceTree = "<group>"; };
+		EDDD8A301EEDA08C0060AFAF /* UIWindow+DidAddSubview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+DidAddSubview.swift"; sourceTree = "<group>"; };
 		EDDDC7171EA1333A006D3295 /* DebugHead.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugHead.swift; sourceTree = "<group>"; };
 		F8CE1AB754661A0793F794194BCD9210 /* DebugMenu.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DebugMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -279,6 +281,7 @@
 				6FADA9A93B1C076AF5F7F9F908C228F5 /* DebugMenuHideDebugHead.swift */,
 				929521A4700660D7796BF2B4E5191915 /* DebugMenuTableViewController.swift */,
 				ED4ADD711E9F99C60070E5BD /* FourcePressGestureRecognizer.swift */,
+				EDDD8A301EEDA08C0060AFAF /* UIWindow+DidAddSubview.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				61554AA8A8907B43D6C3633DB1C8AC4B /* DebugMenu.swift in Sources */,
 				EDDDC7181EA1333A006D3295 /* DebugHead.swift in Sources */,
 				B339A7C0C8E9514010D1027CB643C027 /* DebugMenuExit.swift in Sources */,
+				EDDD8A321EEDA0910060AFAF /* UIWindow+DidAddSubview.swift in Sources */,
 				ED4ADD721E9F99C60070E5BD /* FourcePressGestureRecognizer.swift in Sources */,
 				538CCC986C2CE7C0FECF687CAFD75228 /* DebugMenuHideDebugHead.swift in Sources */,
 				38F440162003C8579D6F2C1682F39EEE /* DebugMenuTableViewController.swift in Sources */,

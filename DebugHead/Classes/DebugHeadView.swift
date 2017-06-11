@@ -12,7 +12,6 @@ import BugImageCreator
 final class DebugHeadView: BugImageView {
   func remove() {
     NotificationCenter.default.removeObserver(self)
-    observingWindow?.removeObserver(self, forKeyPath: "rootViewController")
     removeFromSuperview()
   }
   
@@ -23,6 +22,8 @@ final class DebugHeadView: BugImageView {
     footerView: UIView?,
     openImmediately: Bool
   ){
+    UIView.exchangeDidAddSubview()
+    
     self.footerView = footerView
     
     if sorting {
@@ -70,7 +71,7 @@ final class DebugHeadView: BugImageView {
   }
   
   private func prepareNotifications() {
-    NotificationCenter.default.addObserver(self, selector: #selector(removeObserving), name: .UIWindowDidBecomeHidden, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(bringToFront), name: .DebugHeadUIWindowDidAddSubview, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(addSubviewOnKeyWindow), name: .UIWindowDidBecomeKey, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(orientationDidChange), name: .UIDeviceOrientationDidChange, object: nil)
   }
@@ -108,19 +109,13 @@ final class DebugHeadView: BugImageView {
     UIView.animate(withDuration: 0.3) { self.alpha = 0 }
   }
   
-  private weak var observingWindow: UIWindow?
-  
   @objc private func addSubviewOnKeyWindow() {
-    observingWindow?.removeObserver(self, forKeyPath: "rootViewController")
     removeFromSuperview()
     keyWindow?.addSubview(self)
-    keyWindow?.addObserver(self, forKeyPath: "rootViewController", options: .new, context: nil)
-    observingWindow = keyWindow
   }
   
-  @objc private func removeObserving() {
-    observingWindow?.removeObserver(self, forKeyPath: "rootViewController")
-    observingWindow = nil
+  @objc private func bringToFront() {
+    superview?.bringSubview(toFront: self)
   }
   
   override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
