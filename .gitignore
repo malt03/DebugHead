@@ -24,6 +24,7 @@ DerivedData
 
 Carthage/*
 !Carthage/DebugHead
+*.framework.zip
 
 Example/Pods
 # We recommend against adding the Pods directory to your .gitignore. However
