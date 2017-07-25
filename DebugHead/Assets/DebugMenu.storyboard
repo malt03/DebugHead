@@ -86,10 +86,10 @@
             </objects>
             <point key="canvasLocation" x="313" y="129"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Debug Menu Navigation Controller-->
         <scene sceneID="FOL-O7-MUl">
             <objects>
-                <navigationController id="lVg-fE-xZp" sceneMemberID="viewController">
+                <navigationController id="lVg-fE-xZp" customClass="DebugMenuNavigationController" customModule="DebugHead" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8L9-uf-jed">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
