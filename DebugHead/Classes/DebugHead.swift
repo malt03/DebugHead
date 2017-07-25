@@ -18,14 +18,22 @@ public final class DebugHead {
     footerView: UIView? = nil,
     openImmediately: Bool = false
   ) {
-    debugHeadView = DebugHeadView(menuClasses: menuClasses, center: center, sorting: sorting, footerView: footerView, openImmediately: openImmediately)
+    debugHeadWindow = DebugHeadWindow(menuClasses: menuClasses, center: center, sorting: sorting, footerView: footerView, openImmediately: openImmediately)
   }
   
   public func remove() {
-    debugHeadView?.remove()
-    debugHeadView = nil
+    debugHeadWindow?.remove()
+    debugHeadWindow = nil
   }
   
-  var debugHeadView: DebugHeadView?
+  public func open() {
+    debugHeadWindow?.openDebugMenu()
+  }
+  
+  public func close() {
+    debugHeadWindow?.closeDebugMenu()
+  }
+  
+  var debugHeadWindow: DebugHeadWindow?
   private init() {}
 }

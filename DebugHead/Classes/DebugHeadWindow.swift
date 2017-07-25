@@ -9,7 +9,7 @@
 import UIKit
 import BugImageCreator
 
-final class DebugHeadView: BugImageView {
+final class DebugHeadWindow: UIWindow {
   func remove() {
     NotificationCenter.default.removeObserver(self)
     removeFromSuperview()
@@ -22,8 +22,6 @@ final class DebugHeadView: BugImageView {
     footerView: UIView?,
     openImmediately: Bool
   ){
-    UIView.exchangeDidAddSubview()
-    
     self.footerView = footerView
     
     if sorting {
@@ -32,14 +30,17 @@ final class DebugHeadView: BugImageView {
       self.menuClasses = menuClasses
     }
     
-    super.init(frame: CGRect(origin: .zero, size: CGSize(width: 30, height: 30)))
+    super.init(frame: CGRect(origin: .zero, size: DebugHeadWindow.size))
+    
+    rootViewController = UIStoryboard(name: "DebugMenu", bundle: DebugHeadWindow.bundle).instantiateViewController(withIdentifier: "head")
+    windowLevel = UIWindowLevelStatusBar - 1
     
     self.center = center
     let screenSize = UIScreen.main.bounds.size
     ratioCenter = CGPoint(x: center.x / screenSize.width, y: center.y / screenSize.height)
-    
+    layer.masksToBounds = true
+
     prepareGestureRecognizers()
-    prepareDesign()
     prepareNotifications()
     
     if openImmediately {
@@ -47,6 +48,14 @@ final class DebugHeadView: BugImageView {
         self?.openDebugMenu()
       }
     }
+    
+    let key = UIApplication.shared.keyWindow
+    makeKeyAndVisible()
+    key?.makeKeyAndVisible()
+  }
+  
+  private static var size: CGSize {
+    return CGSize(width: 30, height: 30)
   }
   
   private func prepareGestureRecognizers() {
@@ -59,20 +68,7 @@ final class DebugHeadView: BugImageView {
     addGestureRecognizer(forcePressGestureRecognizer)
   }
   
-  private func prepareDesign() {
-    bugSize = 20
-    bugColor = .white
-    bugLineWidth = 1
-    backgroundColor = .darkGray
-    layer.cornerRadius = 4
-    layer.masksToBounds = true
-    layer.borderColor = UIColor.white.cgColor
-    layer.borderWidth = 1
-  }
-  
   private func prepareNotifications() {
-    NotificationCenter.default.addObserver(self, selector: #selector(bringToFront), name: .DebugHeadUIWindowDidAddSubview, object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(addSubviewOnKeyWindow), name: .UIWindowDidBecomeKey, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(orientationDidChange), name: .UIDeviceOrientationDidChange, object: nil)
   }
   
@@ -83,10 +79,6 @@ final class DebugHeadView: BugImageView {
   private let menuClasses: [DebugMenu.Type]
   private let footerView: UIView?
   private var ratioCenter = CGPoint.zero
-  
-  private var keyWindow: UIWindow? {
-    return UIApplication.shared.keyWindow
-  }
   
   @objc private func panned(_ recognizer: UIPanGestureRecognizer) {
     frame.origin.x += recognizer.translation(in: self).x
@@ -100,29 +92,52 @@ final class DebugHeadView: BugImageView {
     DebugHead.shared.remove()
   }
   
-  @objc private func openDebugMenu() {
-    let nc = UIStoryboard(name: "DebugMenu", bundle: DebugHeadView.bundle).instantiateInitialViewController() as! UINavigationController
-    nc.modalPresentationStyle = .overFullScreen
+  private var lastKeyWindow: UIWindow?
+  
+  func openDebugMenu() {
+    gestureRecognizers?.forEach { $0.isEnabled = false }
+    
+    let nc = UIStoryboard(name: "DebugMenu", bundle: DebugHeadWindow.bundle).instantiateInitialViewController() as! UINavigationController
     let vc = nc.topViewController as! DebugMenuTableViewController
-    vc.prepare(menuClasses, footerView)
-    findTopViewController(keyWindow?.rootViewController)?.present(nc, animated: true, completion: nil)
-    UIView.animate(withDuration: 0.3) { self.alpha = 0 }
+    vc.prepare(self.menuClasses, self.footerView)
+    rootViewController = nc
+    
+    nc.view.frame = CGRect(origin: CGPoint(x: -frame.origin.x, y: -frame.origin.y), size: UIScreen.main.bounds.size)
+    
+    UIView.animate(withDuration: 0.25) {
+      self.frame = UIScreen.main.bounds
+      nc.view.frame = UIScreen.main.bounds
+      UIApplication.shared.setNeedsStatusBarAppearanceUpdate()
+    }
+    
+    lastKeyWindow = UIApplication.shared.keyWindow
+    makeKeyAndVisible()
   }
   
-  @objc private func addSubviewOnKeyWindow() {
-    removeFromSuperview()
-    keyWindow?.addSubview(self)
+  func closeDebugMenu() {
+    gestureRecognizers?.forEach { $0.isEnabled = true }
+    
+    UIView.animate(withDuration: 0.25, animations: {
+      self.frame.size = DebugHeadWindow.size
+      self.updateCenter()
+      self.rootViewController?.view.frame = CGRect(origin: CGPoint(x: -self.frame.origin.x, y: -self.frame.origin.y), size: UIScreen.main.bounds.size)
+      UIApplication.shared.setNeedsStatusBarAppearanceUpdate()
+    }, completion: { _ in
+      self.rootViewController = UIStoryboard(name: "DebugMenu", bundle: DebugHeadWindow.bundle).instantiateViewController(withIdentifier: "head")
+    })
+    
+    lastKeyWindow?.makeKeyAndVisible()
   }
   
   @objc private func bringToFront() {
     superview?.bringSubview(toFront: self)
   }
   
-  override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-    addSubviewOnKeyWindow()
-  }
-    
   @objc private func orientationDidChange() {
+    updateCenter()
+  }
+  
+  private func updateCenter() {
     let screenSize = UIScreen.main.bounds.size
     center = CGPoint(x: screenSize.width * ratioCenter.x, y: screenSize.height * ratioCenter.y)
   }

@@ -10,8 +10,7 @@ import UIKit
 
 final class DebugMenuTableViewController: UITableViewController {
   @IBAction func close() {
-    dismiss(animated: true, completion: nil)
-    UIView.animate(withDuration: 0.3) { DebugHead.shared.debugHeadView?.alpha = 1 }
+    DebugHead.shared.close()
   }
   
   func prepare(_ m: [DebugMenu.Type], _ fv: UIView?) {
@@ -45,7 +44,7 @@ final class DebugMenuTableViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    guard let vc = menuClasses[indexPath.row].debugMenuSelected(DebugHead.shared.debugHeadView!, debugMenuTableViewController: self) else {
+    guard let vc = menuClasses[indexPath.row].debugMenuSelected(DebugHead.shared.debugHeadWindow!, debugMenuTableViewController: self) else {
       tableView.deselectRow(at: indexPath, animated: true)
       return
     }
