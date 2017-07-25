@@ -22,8 +22,9 @@ public final class DebugHead {
   }
   
   public func remove() {
-    debugHeadWindow?.remove()
-    debugHeadWindow = nil
+    debugHeadWindow?.closeDebugMenu {
+      self.debugHeadWindow = nil
+    }
   }
   
   public func open() {
