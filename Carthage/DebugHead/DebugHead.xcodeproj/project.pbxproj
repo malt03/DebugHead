@@ -19,6 +19,7 @@
 		ED02DDE21F26F50F004599D5 /* UIApplication+setNeedsStatusBarAppearanceUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02DDD91F26F50F004599D5 /* UIApplication+setNeedsStatusBarAppearanceUpdate.swift */; };
 		ED02DDE41F26F51C004599D5 /* DebugMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED02DDE31F26F51C004599D5 /* DebugMenu.storyboard */; };
 		ED02DDE71F26F539004599D5 /* BugImageCreator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED02DDE61F26F539004599D5 /* BugImageCreator.framework */; };
+		EDA3B6CB1F271986008A352F /* DebugMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA3B6CA1F271986008A352F /* DebugMenuNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		ED02DDD91F26F50F004599D5 /* UIApplication+setNeedsStatusBarAppearanceUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIApplication+setNeedsStatusBarAppearanceUpdate.swift"; path = "../../../DebugHead/Classes/UIApplication+setNeedsStatusBarAppearanceUpdate.swift"; sourceTree = "<group>"; };
 		ED02DDE31F26F51C004599D5 /* DebugMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = DebugMenu.storyboard; path = ../../../DebugHead/Assets/DebugMenu.storyboard; sourceTree = "<group>"; };
 		ED02DDE61F26F539004599D5 /* BugImageCreator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BugImageCreator.framework; path = ../Build/iOS/BugImageCreator.framework; sourceTree = "<group>"; };
+		EDA3B6CA1F271986008A352F /* DebugMenuNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DebugMenuNavigationController.swift; path = ../../../DebugHead/Classes/DebugMenuNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				ED02DDD41F26F50F004599D5 /* DebugMenu.swift */,
 				ED02DDD51F26F50F004599D5 /* DebugMenuExit.swift */,
 				ED02DDD61F26F50F004599D5 /* DebugMenuHideDebugHead.swift */,
+				EDA3B6CA1F271986008A352F /* DebugMenuNavigationController.swift */,
 				ED02DDD71F26F50F004599D5 /* DebugMenuTableViewController.swift */,
 				ED02DDD81F26F50F004599D5 /* FourcePressGestureRecognizer.swift */,
 				ED02DDD91F26F50F004599D5 /* UIApplication+setNeedsStatusBarAppearanceUpdate.swift */,
@@ -183,6 +186,7 @@
 				ED02DDDA1F26F50F004599D5 /* DebugHead.swift in Sources */,
 				ED02DDDD1F26F50F004599D5 /* DebugMenu.swift in Sources */,
 				ED02DDDC1F26F50F004599D5 /* DebugHeadWindow.swift in Sources */,
+				EDA3B6CB1F271986008A352F /* DebugMenuNavigationController.swift in Sources */,
 				ED02DDE21F26F50F004599D5 /* UIApplication+setNeedsStatusBarAppearanceUpdate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,6 +363,7 @@
 				ED02DDD01F26F4F6004599D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
