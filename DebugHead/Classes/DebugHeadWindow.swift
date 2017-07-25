@@ -114,9 +114,13 @@ final class DebugHeadWindow: UIWindow {
   }
   
   private static var bundle: Bundle {
-    return Bundle(path: Bundle(for: DebugHead.self).path(forResource: "DebugHead", ofType: "bundle")!)!
+    if let path = Bundle(for: DebugHead.self).path(forResource: "DebugHead", ofType: "bundle") {
+      return Bundle(path: path)!
+    } else {
+      return Bundle(for: DebugHead.self)
+    }
   }
-
+  
   @objc private func panned(_ recognizer: UIPanGestureRecognizer) {
     frame.origin.x += recognizer.translation(in: self).x
     frame.origin.y += recognizer.translation(in: self).y
