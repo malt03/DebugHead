@@ -48,7 +48,7 @@ final class DebugHeadWindow: UIWindow {
     }
   }
   
-  func openDebugMenu() {
+  @objc func openDebugMenu() {
     if isOpen { return }
     isOpen = true
     

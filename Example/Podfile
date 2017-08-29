@@ -2,8 +2,4 @@ use_frameworks!
 
 target 'DebugHead_Example' do
   pod 'DebugHead', :path => '../'
-
-  target 'DebugHead_Tests' do
-    inherit! :search_paths
-  end
 end
