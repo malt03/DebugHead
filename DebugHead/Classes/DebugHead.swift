@@ -19,6 +19,21 @@ public final class DebugHead {
     openImmediately: Bool = false
   ) {
     debugHeadWindow = DebugHeadWindow(menuClasses: menuClasses, center: center, sorting: sorting, footerView: footerView, openImmediately: openImmediately)
+    NotificationCenter.default.addObserver(self, selector: #selector(windowDidBecomeKey), name: .UIWindowDidBecomeKey, object: nil)
+  }
+  
+  @objc private func windowDidBecomeKey() {
+    guard let debugHeadWindow = debugHeadWindow else { return }
+    if UIApplication.shared.keyWindow == debugHeadWindow && !debugHeadWindow.isOpen {
+      var next = false
+      for window in UIApplication.shared.windows.reversed() {
+        if next {
+          window.makeKeyAndVisible()
+          return
+        }
+        if window == debugHeadWindow { next = true }
+      }
+    }
   }
   
   public func remove() {

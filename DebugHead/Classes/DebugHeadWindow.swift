@@ -101,7 +101,7 @@ final class DebugHeadWindow: UIWindow {
   private let footerView: UIView?
   private var ratioCenter = CGPoint.zero
   private var lastKeyWindow: UIWindow?
-  private var isOpen = false
+  private(set) var isOpen = false
 
   private func prepareGestureRecognizers() {
     let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(panned(_:)))
