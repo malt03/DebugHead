@@ -28,7 +28,7 @@ final class DebugHeadWindow: UIWindow {
     super.init(frame: CGRect(origin: .zero, size: DebugHeadWindow.size))
     
     rootViewController = UIStoryboard(name: "DebugMenu", bundle: DebugHeadWindow.bundle).instantiateViewController(withIdentifier: "head")
-    windowLevel = UIWindowLevelStatusBar - 1
+    windowLevel = UIWindow.Level.statusBar - 1
     
     self.center = center
     let screenSize = UIScreen.main.bounds.size

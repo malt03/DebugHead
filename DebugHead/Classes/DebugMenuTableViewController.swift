@@ -26,7 +26,7 @@ final class DebugMenuTableViewController: UITableViewController {
     navigationController?.navigationBar.barTintColor = .darkGray
     navigationController?.navigationBar.tintColor = .white
     navigationController?.navigationBar.titleTextAttributes = [
-      NSAttributedStringKey.foregroundColor: UIColor.white
+      NSAttributedString.Key.foregroundColor: UIColor.white
     ]
   }
   

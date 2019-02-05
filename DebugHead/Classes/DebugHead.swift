@@ -19,7 +19,7 @@ public final class DebugHead {
     openImmediately: Bool = false
   ) {
     debugHeadWindow = DebugHeadWindow(menuClasses: menuClasses, center: center, sorting: sorting, footerView: footerView, openImmediately: openImmediately)
-    NotificationCenter.default.addObserver(self, selector: #selector(windowDidBecomeKey), name: .UIWindowDidBecomeKey, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(windowDidBecomeKey), name: UIWindow.didBecomeKeyNotification, object: nil)
   }
   
   @objc private func windowDidBecomeKey() {

@@ -7,10 +7,10 @@
 //
 
 open class DebugMenuHideDebugHead: DebugMenu {
-  open static let debugMenuTitle = "Hide Debug Head"
-  open static let debugMenuDangerLevel = DebugMenuDangerLevel.high
-  open static let debugMenuAccessoryType = UITableViewCellAccessoryType.none
-  open static func debugMenuSelected(_ debugHead: UIView, debugMenuTableViewController: UITableViewController) -> UIViewController? {
+  public static let debugMenuTitle = "Hide Debug Head"
+  public static let debugMenuDangerLevel = DebugMenuDangerLevel.high
+  public static let debugMenuAccessoryType = UITableViewCell.AccessoryType.none
+  public static func debugMenuSelected(_ debugHead: UIView, debugMenuTableViewController: UITableViewController) -> UIViewController? {
     let alert = UIAlertController(title: "Hide?", message: nil, preferredStyle: .alert)
     alert.addAction(UIAlertAction(title: "OK", style: .destructive) { _ in
       DebugHead.shared.remove()
