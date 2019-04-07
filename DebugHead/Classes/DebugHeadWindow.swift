@@ -127,7 +127,7 @@ final class DebugHeadWindow: UIWindow {
     let view = self
     switch gestureRecognizer.state {
     case .began:
-        gesturingView.alpha = 1.0
+        break
     case .changed:
         let point  = gestureRecognizer.translation(in: view)
         let center = CGPoint(
