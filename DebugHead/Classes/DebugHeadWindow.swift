@@ -147,13 +147,12 @@ final class DebugHeadWindow: UIWindow {
         let maxY: CGFloat = UIScreen.main.bounds.maxY
         let minX: CGFloat = 0
         let minY: CGFloat = 0
+        let mergin: CGFloat = 60
 
         var insetTop: CGFloat = 0
         if #available(iOS 11.0, *) {
             insetTop = (UIApplication.shared.delegate?.window??.safeAreaInsets.top ?? 0) * 0.5
         }
-
-        let mergin: CGFloat = 60
 
         if y - mergin <= minY {
             if x - width * 0.5 <= minX {
