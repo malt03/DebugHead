@@ -178,7 +178,7 @@ final class DebugHeadWindow: UIWindow {
         }
 
         let center = CGPoint(x: x, y: y)
-        UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: [.curveEaseInOut, .allowUserInteraction], animations: {
             gesturingView.center = center
         }, completion: { _ in
             guard center.equalTo(gesturingView.center) else {
