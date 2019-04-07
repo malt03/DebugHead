@@ -121,12 +121,74 @@ final class DebugHeadWindow: UIWindow {
     }
   }
   
-  @objc private func panned(_ recognizer: UIPanGestureRecognizer) {
-    frame.origin.x += recognizer.translation(in: self).x
-    frame.origin.y += recognizer.translation(in: self).y
-    recognizer.setTranslation(.zero, in: self)
-    let screenSize = UIScreen.main.bounds.size
-    ratioCenter = CGPoint(x: center.x / screenSize.width, y: center.y / screenSize.height)
+  @objc private func panned(_ gestureRecognizer: UIPanGestureRecognizer) {
+    guard let gesturingView = gestureRecognizer.view else { return }
+
+    let view = self
+    switch gestureRecognizer.state {
+    case .began:
+        gesturingView.alpha = 1.0
+    case .changed:
+        let point  = gestureRecognizer.translation(in: view)
+        let center = CGPoint(
+            x: gesturingView.center.x + point.x,
+            y: gesturingView.center.y + point.y
+        )
+        gesturingView.center = center
+        gestureRecognizer.setTranslation(.zero, in: view)
+    default:
+        let point  = gesturingView.center
+        let width  = gesturingView.bounds.width
+        let height = gesturingView.bounds.height
+
+        var x = point.x
+        var y = point.y
+        let maxX: CGFloat = UIScreen.main.bounds.maxX
+        let maxY: CGFloat = UIScreen.main.bounds.maxY
+        let minX: CGFloat = 0
+        let minY: CGFloat = 0
+
+        var insetTop: CGFloat = 0
+        if #available(iOS 11.0, *) {
+            insetTop = (UIApplication.shared.delegate?.window??.safeAreaInsets.top ?? 0) * 0.5
+        }
+
+        let mergin: CGFloat = 60
+
+        if y - mergin <= minY {
+            if x - width * 0.5 <= minX {
+                x = minX + width
+            } else if maxX <= x + width * 0.5 {
+                x = maxX - width
+            }
+            y = minY + height + insetTop
+        } else if maxY <= y + mergin {
+            if x - width * 0.5 <= minX {
+                x = minX + width
+            } else if maxX <= x + width * 0.5 {
+                x = maxX - width
+            }
+            y = maxY - height
+        } else {
+            if x < UIScreen.main.bounds.width * 0.5 {
+                x = minX + width
+            } else {
+                x = maxX - width
+            }
+        }
+
+        let center = CGPoint(x: x, y: y)
+
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseInOut, animations: {
+            gesturingView.center = center
+        }, completion: { _ in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+                guard center.equalTo(gesturingView.center) else {
+                    return
+                }
+            }
+        })
+    }
   }
   
   @objc private func fourcePressed() {
