@@ -19,6 +19,10 @@
 		ED02DDE21F26F50F004599D5 /* UIApplication+setNeedsStatusBarAppearanceUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02DDD91F26F50F004599D5 /* UIApplication+setNeedsStatusBarAppearanceUpdate.swift */; };
 		ED02DDE41F26F51C004599D5 /* DebugMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED02DDE31F26F51C004599D5 /* DebugMenu.storyboard */; };
 		ED02DDE71F26F539004599D5 /* BugImageCreator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED02DDE61F26F539004599D5 /* BugImageCreator.framework */; };
+		ED6ACA70225B105D008C3814 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6ACA6C225B105C008C3814 /* Line.swift */; };
+		ED6ACA71225B105D008C3814 /* CGPoint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6ACA6D225B105C008C3814 /* CGPoint+Extension.swift */; };
+		ED6ACA72225B105D008C3814 /* SideStickInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6ACA6E225B105D008C3814 /* SideStickInfo.swift */; };
+		ED6ACA73225B105D008C3814 /* CGRect+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6ACA6F225B105D008C3814 /* CGRect+Extension.swift */; };
 		EDA3B6CB1F271986008A352F /* DebugMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA3B6CA1F271986008A352F /* DebugMenuNavigationController.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +41,10 @@
 		ED02DDD91F26F50F004599D5 /* UIApplication+setNeedsStatusBarAppearanceUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIApplication+setNeedsStatusBarAppearanceUpdate.swift"; path = "../../../DebugHead/Classes/UIApplication+setNeedsStatusBarAppearanceUpdate.swift"; sourceTree = "<group>"; };
 		ED02DDE31F26F51C004599D5 /* DebugMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = DebugMenu.storyboard; path = ../../../DebugHead/Assets/DebugMenu.storyboard; sourceTree = "<group>"; };
 		ED02DDE61F26F539004599D5 /* BugImageCreator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BugImageCreator.framework; path = ../Build/iOS/BugImageCreator.framework; sourceTree = "<group>"; };
+		ED6ACA6C225B105C008C3814 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Line.swift; path = ../../../DebugHead/Classes/Line.swift; sourceTree = "<group>"; };
+		ED6ACA6D225B105C008C3814 /* CGPoint+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGPoint+Extension.swift"; path = "../../../DebugHead/Classes/CGPoint+Extension.swift"; sourceTree = "<group>"; };
+		ED6ACA6E225B105D008C3814 /* SideStickInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideStickInfo.swift; path = ../../../DebugHead/Classes/SideStickInfo.swift; sourceTree = "<group>"; };
+		ED6ACA6F225B105D008C3814 /* CGRect+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGRect+Extension.swift"; path = "../../../DebugHead/Classes/CGRect+Extension.swift"; sourceTree = "<group>"; };
 		EDA3B6CA1F271986008A352F /* DebugMenuNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DebugMenuNavigationController.swift; path = ../../../DebugHead/Classes/DebugMenuNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +91,10 @@
 				ED02DDD71F26F50F004599D5 /* DebugMenuTableViewController.swift */,
 				ED02DDD81F26F50F004599D5 /* FourcePressGestureRecognizer.swift */,
 				ED02DDD91F26F50F004599D5 /* UIApplication+setNeedsStatusBarAppearanceUpdate.swift */,
+				ED6ACA6D225B105C008C3814 /* CGPoint+Extension.swift */,
+				ED6ACA6F225B105D008C3814 /* CGRect+Extension.swift */,
+				ED6ACA6C225B105C008C3814 /* Line.swift */,
+				ED6ACA6E225B105D008C3814 /* SideStickInfo.swift */,
 				ED02DDE31F26F51C004599D5 /* DebugMenu.storyboard */,
 				ED02DDCA1F26F4F6004599D5 /* Info.plist */,
 			);
@@ -135,7 +147,7 @@
 		ED02DDBD1F26F4F6004599D5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Koji Murata";
 				TargetAttributes = {
 					ED02DDC51F26F4F6004599D5 = {
@@ -147,10 +159,11 @@
 			};
 			buildConfigurationList = ED02DDC01F26F4F6004599D5 /* Build configuration list for PBXProject "DebugHead" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = ED02DDBC1F26F4F6004599D5;
 			productRefGroup = ED02DDC71F26F4F6004599D5 /* Products */;
@@ -180,13 +193,17 @@
 			files = (
 				ED02DDDF1F26F50F004599D5 /* DebugMenuHideDebugHead.swift in Sources */,
 				ED02DDE11F26F50F004599D5 /* FourcePressGestureRecognizer.swift in Sources */,
+				ED6ACA71225B105D008C3814 /* CGPoint+Extension.swift in Sources */,
 				ED02DDDE1F26F50F004599D5 /* DebugMenuExit.swift in Sources */,
+				ED6ACA72225B105D008C3814 /* SideStickInfo.swift in Sources */,
 				ED02DDE01F26F50F004599D5 /* DebugMenuTableViewController.swift in Sources */,
 				ED02DDDB1F26F50F004599D5 /* DebugHeadViewController.swift in Sources */,
 				ED02DDDA1F26F50F004599D5 /* DebugHead.swift in Sources */,
 				ED02DDDD1F26F50F004599D5 /* DebugMenu.swift in Sources */,
+				ED6ACA73225B105D008C3814 /* CGRect+Extension.swift in Sources */,
 				ED02DDDC1F26F50F004599D5 /* DebugHeadWindow.swift in Sources */,
 				EDA3B6CB1F271986008A352F /* DebugMenuNavigationController.swift in Sources */,
+				ED6ACA70225B105D008C3814 /* Line.swift in Sources */,
 				ED02DDE21F26F50F004599D5 /* UIApplication+setNeedsStatusBarAppearanceUpdate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,6 +215,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -260,6 +278,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -326,13 +345,13 @@
 				);
 				INFOPLIST_FILE = DebugHead/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dena.DebugHead;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -351,12 +370,12 @@
 				);
 				INFOPLIST_FILE = DebugHead/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dena.DebugHead;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
