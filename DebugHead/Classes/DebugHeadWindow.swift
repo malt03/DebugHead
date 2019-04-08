@@ -15,9 +15,11 @@ final class DebugHeadWindow: UIWindow {
     center: CGPoint,
     sorting: Bool,
     footerView: UIView?,
-    openImmediately: Bool
+    openImmediately: Bool,
+    sideStickInfo: SideStickInfo?
   ){
     self.footerView = footerView
+    self.sideStickInfo = sideStickInfo
     
     if sorting {
       self.menuClasses = menuClasses.sorted { $0.debugMenuDangerLevel.rawValue < $1.debugMenuDangerLevel.rawValue }
@@ -102,6 +104,7 @@ final class DebugHeadWindow: UIWindow {
   private var ratioCenter = CGPoint.zero
   private var lastKeyWindow: UIWindow?
   private(set) var isOpen = false
+  private let sideStickInfo: SideStickInfo?
 
   private func prepareGestureRecognizers() {
     let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(panned(_:)))
@@ -137,53 +140,40 @@ final class DebugHeadWindow: UIWindow {
       gesturingView.center = center
       gestureRecognizer.setTranslation(.zero, in: view)
     default:
-      let point  = gesturingView.center
-      let width  = gesturingView.bounds.width
-      let height = gesturingView.bounds.height
+      guard let sideStickInfo = sideStickInfo else { return }
+      let safeAreaInset = UIApplication.shared.windows.first?.safeAreaInsets ?? .zero
+      let mergin = sideStickInfo.mergin
+      let outlineRect = CGRect(
+        x: safeAreaInset.left + mergin + DebugHeadWindow.size.width / 2,
+        y: safeAreaInset.top + mergin + DebugHeadWindow.size.height / 2,
+        width: UIScreen.main.bounds.width - safeAreaInset.left - safeAreaInset.right - mergin * 2 - DebugHeadWindow.size.width,
+        height: UIScreen.main.bounds.height - safeAreaInset.top - safeAreaInset.bottom - mergin * 2 - DebugHeadWindow.size.height
+      )
       
-      var x = point.x
-      var y = point.y
-      let maxX: CGFloat = UIScreen.main.bounds.maxX
-      let maxY: CGFloat = UIScreen.main.bounds.maxY
-      let minX: CGFloat = 0
-      let minY: CGFloat = 0
-      let mergin: CGFloat = 60
-      
-      var insetTop: CGFloat = 0
-      if #available(iOS 11.0, *) {
-        insetTop = (UIApplication.shared.delegate?.window??.safeAreaInsets.top ?? 0) * 0.5
+      let initialVelocity = gestureRecognizer.velocity(in: self)
+      if initialVelocity.length <= 200 || !outlineRect.contains(center) {
+        UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: {
+          self.center = outlineRect.nearSidePoint(for: self.center)
+          let screenSize = UIScreen.main.bounds.size
+          self.ratioCenter = CGPoint(x: self.center.x / screenSize.width, y: self.center.y / screenSize.height)
+        }, completion: nil)
+        return
       }
-      
-      if y - mergin <= minY {
-        if x - width * 0.5 <= minX {
-          x = minX + width
-        } else if maxX <= x + width * 0.5 {
-          x = maxX - width
-        }
-        y = minY + height + insetTop
-      } else if maxY <= y + mergin {
-        if x - width * 0.5 <= minX {
-          x = minX + width
-        } else if maxX <= x + width * 0.5 {
-          x = maxX - width
-        }
-        y = maxY - height
-      } else {
-        if x < UIScreen.main.bounds.width * 0.5 {
-          x = minX + width
-        } else {
-          x = maxX - width
-        }
-      }
-      
-      let center = CGPoint(x: x, y: y)
-      UIView.animate(withDuration: 0.3, delay: 0.0, options: [.curveEaseInOut, .allowUserInteraction], animations: {
-        gesturingView.center = center
-      }, completion: { _ in
-        guard center.equalTo(gesturingView.center) else {
-          return
-        }
-      })
+
+      let intersection = outlineRect.intersection(from: center, velocity: initialVelocity)
+      UIView.animate(
+        withDuration: 0.2,
+        delay: 0,
+        usingSpringWithDamping: 1,
+        initialSpringVelocity: initialVelocity.length / center.distance(to: intersection),
+        options: [],
+        animations: {
+          self.center = intersection
+          let screenSize = UIScreen.main.bounds.size
+          self.ratioCenter = CGPoint(x: self.center.x / screenSize.width, y: self.center.y / screenSize.height)
+        },
+        completion: nil
+      )
     }
   }
   

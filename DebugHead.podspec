@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'DebugHead'
-  s.version          = '2.1.2'
+  s.version          = '2.2.0'
   s.summary          = 'DebugHead like Facebook chat head.'
 
 # This description is used to generate tags and improve search results.
@@ -34,7 +34,7 @@ And, you can make plugin easy.
   s.source           = { :git => 'https://github.com/malt03/DebugHead.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '11.0'
 
   s.source_files = 'DebugHead/Classes/**/*'
 

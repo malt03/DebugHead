@@ -13,12 +13,20 @@ public final class DebugHead {
   
   public func prepare(
     menuClasses: [DebugMenu.Type],
-    center: CGPoint = CGPoint(x: UIScreen.main.bounds.size.width - 50, y: UIScreen.main.bounds.size.height - 50),
+    center: CGPoint = CGPoint(x: UIScreen.main.bounds.size.width - 50, y: UIScreen.main.bounds.size.height - 100),
     sorting: Bool = true,
     footerView: UIView? = nil,
-    openImmediately: Bool = false
+    openImmediately: Bool = false,
+    sideStickInfo: SideStickInfo? = .default
   ) {
-    debugHeadWindow = DebugHeadWindow(menuClasses: menuClasses, center: center, sorting: sorting, footerView: footerView, openImmediately: openImmediately)
+    debugHeadWindow = DebugHeadWindow(
+      menuClasses: menuClasses,
+      center: center,
+      sorting: sorting,
+      footerView: footerView,
+      openImmediately: openImmediately,
+      sideStickInfo: sideStickInfo
+    )
     NotificationCenter.default.addObserver(self, selector: #selector(windowDidBecomeKey), name: UIWindow.didBecomeKeyNotification, object: nil)
   }
   

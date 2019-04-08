@@ -154,7 +154,7 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = 582LEGWZJK;
+						DevelopmentTeam = 8AKT7PFJ2M;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Manual;
 					};
@@ -377,14 +377,15 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 582LEGWZJK;
+				DEVELOPMENT_TEAM = 8AKT7PFJ2M;
 				INFOPLIST_FILE = DebugHead/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "d06cd481-7a50-434c-95a8-cc40f5acc48c";
-				PROVISIONING_PROFILE_SPECIFIER = "ent-*";
+				PROVISIONING_PROFILE_SPECIFIER = "Koji Wildcard";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -398,6 +399,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DebugHead/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
