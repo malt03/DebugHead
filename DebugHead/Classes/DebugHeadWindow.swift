@@ -114,7 +114,7 @@ final class DebugHeadWindow: UIWindow {
     //   Simulator's setting: Hardware -> Touch Pressure -> UseTrack Force ✔︎
     #if targetEnvironment(simulator)
     #else
-    let forcePressGestureRecognizer = FourcePressGestureRecognizer(target: self, action: #selector(fourcePressed))
+    let forcePressGestureRecognizer = FourcePressGestureRecognizer(target: self, action: #selector(forcePressed))
     addGestureRecognizer(forcePressGestureRecognizer)
     #endif
   }
@@ -137,7 +137,7 @@ final class DebugHeadWindow: UIWindow {
 
   #if targetEnvironment(simulator)
   #else
-  @objc private func fourcePressed() {
+  @objc private func forcePressed() {
     DebugHead.shared.remove()
   }
   #endif
