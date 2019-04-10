@@ -106,8 +106,6 @@ final class DebugHeadWindow: UIWindow {
   private func prepareGestureRecognizers() {
     let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(panned(_:)))
     let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(openDebugMenu))
-    let forcePressGestureRecognizer = FourcePressGestureRecognizer(target: self, action: #selector(fourcePressed))
-    
     addGestureRecognizer(panGestureRecognizer)
     addGestureRecognizer(tapGestureRecognizer)
 
@@ -116,6 +114,7 @@ final class DebugHeadWindow: UIWindow {
     //   Simulator's setting: Hardware -> Touch Pressure -> UseTrack Force ✔︎
     #if TARGET_IPHONE_SIMULATOR
     #else
+    let forcePressGestureRecognizer = FourcePressGestureRecognizer(target: self, action: #selector(fourcePressed))
     addGestureRecognizer(forcePressGestureRecognizer)
     #endif
   }
