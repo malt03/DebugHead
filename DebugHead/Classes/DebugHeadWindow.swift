@@ -112,7 +112,7 @@ final class DebugHeadWindow: UIWindow {
     // The force press gesture is recognized as normal tap gesture in simulator when 'UseTrack Force' is enable.
     // So we disable to the force press gesture in the simulator.
     //   Simulator's setting: Hardware -> Touch Pressure -> UseTrack Force ✔︎
-    #if TARGET_IPHONE_SIMULATOR
+    #if targetEnvironment(simulator)
     #else
     let forcePressGestureRecognizer = FourcePressGestureRecognizer(target: self, action: #selector(fourcePressed))
     addGestureRecognizer(forcePressGestureRecognizer)
