@@ -134,11 +134,14 @@ final class DebugHeadWindow: UIWindow {
     let screenSize = UIScreen.main.bounds.size
     ratioCenter = CGPoint(x: center.x / screenSize.width, y: center.y / screenSize.height)
   }
-  
+
+  #if targetEnvironment(simulator)
+  #else
   @objc private func fourcePressed() {
     DebugHead.shared.remove()
   }
-  
+  #endif
+
   private func updateCenter() {
     let screenSize = UIScreen.main.bounds.size
     center = CGPoint(x: screenSize.width * ratioCenter.x, y: screenSize.height * ratioCenter.y)
