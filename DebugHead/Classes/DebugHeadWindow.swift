@@ -109,11 +109,17 @@ final class DebugHeadWindow: UIWindow {
   private func prepareGestureRecognizers() {
     let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(panned(_:)))
     let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(openDebugMenu))
-    let forcePressGestureRecognizer = FourcePressGestureRecognizer(target: self, action: #selector(fourcePressed))
-    
     addGestureRecognizer(panGestureRecognizer)
     addGestureRecognizer(tapGestureRecognizer)
+
+    // The force press gesture is recognized as normal tap gesture in simulator when 'UseTrack Force' is enable.
+    // So we disable to the force press gesture in the simulator.
+    //   Simulator's setting: Hardware -> Touch Pressure -> UseTrack Force ✔︎
+    #if targetEnvironment(simulator)
+    #else
+    let forcePressGestureRecognizer = FourcePressGestureRecognizer(target: self, action: #selector(forcePressed))
     addGestureRecognizer(forcePressGestureRecognizer)
+    #endif
   }
   
   private static var bundle: Bundle {
@@ -176,11 +182,14 @@ final class DebugHeadWindow: UIWindow {
       )
     }
   }
-  
-  @objc private func fourcePressed() {
+
+  #if targetEnvironment(simulator)
+  #else
+  @objc private func forcePressed() {
     DebugHead.shared.remove()
   }
-  
+  #endif
+
   private func updateCenter() {
     let screenSize = UIScreen.main.bounds.size
     center = CGPoint(x: screenSize.width * ratioCenter.x, y: screenSize.height * ratioCenter.y)
