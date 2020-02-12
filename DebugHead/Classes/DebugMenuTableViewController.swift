@@ -44,7 +44,7 @@ final class DebugMenuTableViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    guard let vc = menuClasses[indexPath.row].debugMenuSelected(DebugHead.shared.debugHeadWindow!, debugMenuTableViewController: self) else {
+    guard let vc = menuClasses[indexPath.row].debugMenuSelected(DebugHead.shared.debugHeadWindow!, tableViewController: self, indexPath: indexPath) else {
       tableView.deselectRow(at: indexPath, animated: true)
       return
     }
