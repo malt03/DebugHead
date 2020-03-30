@@ -7,10 +7,10 @@
 //
 
 open class DebugMenuExit: DebugMenu {
-  public static let debugMenuTitle = "Exit"
-  public static let debugMenuDangerLevel = DebugMenuDangerLevel.extreme
-  public static let debugMenuAccessoryType = UITableViewCell.AccessoryType.none
-  public static func debugMenuSelected(_ debugHead: UIView, tableViewController: UITableViewController, indexPath: IndexPath) -> UIViewController? {
+  public let debugMenuTitle = "Exit"
+  public let debugMenuDangerLevel = DebugMenuDangerLevel.extreme
+  public let debugMenuAccessoryType = UITableViewCell.AccessoryType.none
+  public func debugMenuSelected(_ debugHead: UIView, tableViewController: UITableViewController, indexPath: IndexPath) -> UIViewController? {
     let alert = UIAlertController(title: "Exit", message: nil, preferredStyle: .alert)
     alert.addAction(UIAlertAction(title: "OK", style: .destructive) { _ in
       exit(1)
@@ -19,4 +19,6 @@ open class DebugMenuExit: DebugMenu {
     tableViewController.present(alert, animated: true, completion: nil)
     return nil
   }
+
+  public init() {}
 }

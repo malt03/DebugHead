@@ -16,8 +16,8 @@ public enum DebugMenuDangerLevel: Int {
 }
 
 public protocol DebugMenu {
-  static var debugMenuTitle: String { get }
-  static var debugMenuAccessoryType: UITableViewCell.AccessoryType { get }
-  static var debugMenuDangerLevel: DebugMenuDangerLevel { get }
-  static func debugMenuSelected(_ debugHead: UIView, tableViewController: UITableViewController, indexPath: IndexPath) -> UIViewController?
+  var debugMenuTitle: String { get }
+  var debugMenuAccessoryType: UITableViewCell.AccessoryType { get }
+  var debugMenuDangerLevel: DebugMenuDangerLevel { get }
+  func debugMenuSelected(_ debugHead: UIView, tableViewController: UITableViewController, indexPath: IndexPath) -> UIViewController?
 }

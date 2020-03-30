@@ -11,7 +11,7 @@ import BugImageCreator
 
 final class DebugHeadWindow: UIWindow {
   init(
-    menuClasses: [DebugMenu.Type],
+    menus: [DebugMenu],
     center: CGPoint,
     sorting: Bool,
     footerView: UIView?,
@@ -22,9 +22,9 @@ final class DebugHeadWindow: UIWindow {
     self.sideStickInfo = sideStickInfo
     
     if sorting {
-      self.menuClasses = menuClasses.sorted { $0.debugMenuDangerLevel.rawValue < $1.debugMenuDangerLevel.rawValue }
+      self.menus = menus.sorted { $0.debugMenuDangerLevel.rawValue < $1.debugMenuDangerLevel.rawValue }
     } else {
-      self.menuClasses = menuClasses
+      self.menus = menus
     }
     
     super.init(frame: CGRect(origin: .zero, size: DebugHeadWindow.size))
@@ -58,7 +58,7 @@ final class DebugHeadWindow: UIWindow {
     
     let nc = UIStoryboard(name: "DebugMenu", bundle: DebugHeadWindow.bundle).instantiateInitialViewController() as! UINavigationController
     let vc = nc.topViewController as! DebugMenuTableViewController
-    vc.prepare(self.menuClasses, self.footerView)
+    vc.prepare(self.menus, self.footerView)
     rootViewController = nc
     
     nc.view.frame = CGRect(origin: CGPoint(x: -frame.origin.x, y: -frame.origin.y), size: UIScreen.main.bounds.size)
@@ -99,7 +99,7 @@ final class DebugHeadWindow: UIWindow {
     return CGSize(width: 30, height: 30)
   }
   
-  private let menuClasses: [DebugMenu.Type]
+  private let menus: [DebugMenu]
   private let footerView: UIView?
   private var ratioCenter = CGPoint.zero
   private var lastKeyWindow: UIWindow?

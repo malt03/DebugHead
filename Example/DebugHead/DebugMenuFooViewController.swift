@@ -10,10 +10,10 @@ import UIKit
 import DebugHead
 
 class DebugMenuFooViewController: UIViewController, DebugMenu {
-  static let debugMenuTitle = "Foo"
-  static let debugMenuAccessoryType = UITableViewCell.AccessoryType.disclosureIndicator
-  static let debugMenuDangerLevel = DebugMenuDangerLevel.none
-  static func debugMenuSelected(_ debugHead: UIView, tableViewController: UITableViewController, indexPath: IndexPath) -> UIViewController? {
+  let debugMenuTitle = "Foo"
+  let debugMenuAccessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+  let debugMenuDangerLevel = DebugMenuDangerLevel.none
+  func debugMenuSelected(_ debugHead: UIView, tableViewController: UITableViewController, indexPath: IndexPath) -> UIViewController? {
     return UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "Foo")
   }
 }

@@ -12,7 +12,7 @@ public final class DebugHead {
   public static let shared = DebugHead()
   
   public func prepare(
-    menuClasses: [DebugMenu.Type],
+    menus: [DebugMenu],
     center: CGPoint = CGPoint(x: UIScreen.main.bounds.size.width - 50, y: UIScreen.main.bounds.size.height - 100),
     sorting: Bool = true,
     footerView: UIView? = nil,
@@ -20,7 +20,7 @@ public final class DebugHead {
     sideStickInfo: SideStickInfo? = .default
   ) {
     debugHeadWindow = DebugHeadWindow(
-      menuClasses: menuClasses,
+      menus: menus,
       center: center,
       sorting: sorting,
       footerView: footerView,

@@ -13,11 +13,11 @@ final class DebugMenuTableViewController: UITableViewController {
     DebugHead.shared.close()
   }
   
-  func prepare(_ m: [DebugMenu.Type], _ fv: UIView?) {
-    menuClasses = m
+  func prepare(_ m: [DebugMenu], _ fv: UIView?) {
+    menus = m
     footerView = fv
   }
-  private var menuClasses = [DebugMenu.Type]()
+  private var menus = [DebugMenu]()
   private var footerView: UIView?
   
   override func viewDidLoad() {
@@ -31,12 +31,12 @@ final class DebugMenuTableViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return menuClasses.count
+    return menus.count
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "default", for: indexPath)
-    let menuClass = menuClasses[indexPath.row]
+    let menuClass = menus[indexPath.row]
     cell.textLabel?.textColor = UIColor.fromDangerLevel(menuClass.debugMenuDangerLevel)
     cell.textLabel?.text = menuClass.debugMenuTitle
     cell.accessoryType = menuClass.debugMenuAccessoryType
@@ -44,7 +44,7 @@ final class DebugMenuTableViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    guard let vc = menuClasses[indexPath.row].debugMenuSelected(DebugHead.shared.debugHeadWindow!, tableViewController: self, indexPath: indexPath) else {
+    guard let vc = menus[indexPath.row].debugMenuSelected(DebugHead.shared.debugHeadWindow!, tableViewController: self, indexPath: indexPath) else {
       tableView.deselectRow(at: indexPath, animated: true)
       return
     }
