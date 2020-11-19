@@ -21,3 +21,8 @@ public protocol DebugMenu {
   var debugMenuDangerLevel: DebugMenuDangerLevel { get }
   func debugMenuSelected(_ debugHead: UIView, tableViewController: UITableViewController, indexPath: IndexPath) -> UIViewController?
 }
+
+public struct DebugMenuSection {
+    let title: String
+    let menus: [DebugMenu]
+}
